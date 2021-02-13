@@ -35,13 +35,17 @@
     <!-- Primary Page Layout
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <div class="container">
-        <h1>Euclid's Elements</h1>
+        <h2>Euclid's Elements</h2>
+        <div class="row">
+            All information gathered from <a href="https://mathcs.clarku.edu/~djoyce/elements/elements.html" target="_blank">https://mathcs.clarku.edu/~djoyce/elements/elements.html</a>
+        </div>
         <div class="row">
         <div style="margin-top: 5%; margin-bottom: 5%;">
             <h4>Postulates</h4>
             <table id="postulates" class="compact hover" width="100%"></table>
             <p></p>
             <h4>Common Notions</h4>
+            <p>More information on common notions can be found <a href="https://mathcs.clarku.edu/~djoyce/elements/bookI/cn.html" target="_blank">here</a>.</p>
             <table id="common-notions" class="compact hover" width="100%"></table>
             <p></p>
             <h4>Definitions</h4>
@@ -68,7 +72,8 @@
                 searching: false,
                 columns: [
                     {title: 'Number', data: 'number'},
-                    {title: 'Postulate', data: 'postulate'}
+                    {title: 'Postulate', data: 'postulate'},
+                    {title: 'Link', data: 'link', render: (d, t, r, m) => '<a href="' + d + '" target="_blank">Link</a>'}
                 ]
             });
             $('#common-notions').DataTable({
@@ -90,7 +95,8 @@
                 columns: [
                     {title: 'Book', data: 'book'},
                     {title: 'Number', data: 'number'},
-                    {title: 'Definition', data: 'definition'}
+                    {title: 'Definition', data: 'definition'},
+                    {title: 'Link', data: 'link', render: (d, t, r, m) => '<a href="' + d + '" target="_blank">Link</a>'}
                 ]
             });
             $('#propositions').DataTable({
@@ -101,7 +107,8 @@
                 columns: [
                     {title: 'Book', data: 'book'},
                     {title: 'Number', data: 'number'},
-                    {title: 'Proposition', data: 'proposition'}
+                    {title: 'Proposition', data: 'proposition'},
+                    {title: 'Link', data: 'link', render: (d, t, r, m) => '<a href="' + d + '" target="_blank">Link</a>'}
                 ]
             });
         });
