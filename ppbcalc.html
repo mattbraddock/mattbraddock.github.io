@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Partial Point Buy Calculator</title>
+  <meta name="description" content="Partial Point Buy Calculator for D&D 5E">
+  <meta name="author" content="Matt Braddock">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@600&display=swap" rel="stylesheet">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <style>
+      .container {
+          max-width: 700px;
+      }
+      
+      .die {
+          max-width: 25px;
+      }
+
+      td {
+        vertical-align: middle;
+      }
+      
+      @media (min-width: 600px) {
+          .die {
+              max-width: 50px;
+          }
+      }
+  </style>
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+</head>
+<body>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+    <div class="row">
+        <h2>Partial Point Buy Calculator</h2>
+    </div>
+    <div class="row">
+        <p>This calculator implements <a href="https://homebrewery.naturalcrit.com/share/rkV9Y4QWf" target="_blank">partial point buy</a> for determining ability scores created by Reddit user <a href="https://www.reddit.com/user/ToeManglerStrangler/" target="_blank">ToeManglerStrangler</a>.</p>
+        <p>Roll 4d6 and use the sum of the greatest 3 dice to determine an ability score. Repeat this 3 more times to obtain a total of 4 ability scores. If the sum of the ability scores is less than 42 or greater than 62, restart the process. Otherwise, subtract the sum from 74, and decide the remaining 2 ability scores using the difference with the restriction that the final 2 ability scores not be less than 6 nor greater than 16.</p>
+    </div>
+    <div class="row">
+        You can physically roll dice and fill in the scores, or <a href="javascript:void()" onclick="randomRolls()">roll random numbers</a>.
+    </div>
+    <div class="row" style="margin-top: 25px;">
+        <table class="u-full-width">
+            <tbody>
+                <tr>
+                    <td><span style="white-space: nowrap;">Score 1:</span></td>
+                    <td><input type="number" class="rolledScores" id="score1" min="3" max="18" step="1" /></td>
+                    <td><img id="s1d1" class="die" src="images/default.png"></td>
+                    <td><img id="s1d2" class="die" src="images/default.png"></td>
+                    <td><img id="s1d3" class="die" src="images/default.png"></td>
+                    <td><img id="s1d4" class="die" src="images/default.png"></td>
+                </tr>
+                <tr>
+                    <td><span style="white-space: nowrap;">Score 2:</span></td>
+                    <td><input type="number" class="rolledScores" id="score2" min="3" max="18" step="1" /></td>
+                    <td><img id="s2d1" class="die" src="images/default.png"></td>
+                    <td><img id="s2d2" class="die" src="images/default.png"></td>
+                    <td><img id="s2d3" class="die" src="images/default.png"></td>
+                    <td><img id="s2d4" class="die" src="images/default.png"></td>
+                </tr>
+                <tr>
+                    <td><span style="white-space: nowrap;">Score 3:</span></td>
+                    <td><input type="number" class="rolledScores" id="score3" min="3" max="18" step="1" /></td>
+                    <td><img id="s3d1" class="die" src="images/default.png"></td>
+                    <td><img id="s3d2" class="die" src="images/default.png"></td>
+                    <td><img id="s3d3" class="die" src="images/default.png"></td>
+                    <td><img id="s3d4" class="die" src="images/default.png"></td>
+                </tr>
+                <tr>
+                    <td><span style="white-space: nowrap;">Score 4:</span></td>
+                    <td><input type="number" class="rolledScores" id="score4" min="3" max="18" step="1" /></td>
+                    <td><img id="s4d1" class="die" src="images/default.png"></td>
+                    <td><img id="s4d2" class="die" src="images/default.png"></td>
+                    <td><img id="s4d3" class="die" src="images/default.png"></td>
+                    <td><img id="s4d4" class="die" src="images/default.png"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="row" style="margin-bottom: 20px;">
+        <p id="scoreTotal"></p>
+        <p id="finalScores" style="display: none;">
+            Enter score 5, and score 6 will automatically be computed.
+            <br>Score 5: <input type="number" id="score5" min="6" max="16" step="1" />&nbsp; Score 6: <input type="number" id="score6" min="6" max="16" step="1" readonly />
+            <br><span id="warning"></span>
+        </p>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <script>
+        var remainder = 0;
+
+        const randomRolls = () => {
+            const randomInt = (min, max) => Math.floor(Math.random() * (Math.floor(max) - Math.ceil(min) + 1)) + Math.ceil(min);
+            const sumOfDice = arr => [arr.sort((a, b) => a - b).shift(), arr.reduce((x, y) => x + y, 0)];
+            const displayInfo = (arr, score) => {
+                console.log(arr);
+                arr.forEach((r, i) => document.getElementById('s' + score + 'd' + (i + 1)).src = 'images/on_d' + r + '.png');
+                const sumArr = sumOfDice(arr);
+                document.getElementById('score' + score).value = sumArr[1];
+                const dice = [...document.querySelectorAll('.die')];
+                dice.find(d => d.id.includes('s' + score + 'd') && d.src.includes('images/on_d' + sumArr[0] + '.png')).src = 'images/off_d' + sumArr[0] + '.png';
+            }
+            for (let i = 1; i <= 4; i++) displayInfo(Array.from(Array(4), v => randomInt(1, 6)), i.toString());
+            sumRolls();
+        }
+
+        const sumRolls = () => {
+            const sum = [...document.querySelectorAll('.rolledScores')].reduce((x, y) => x + parseInt(y.value, 10), 0);
+            if (sum < 42) {
+                document.getElementById('scoreTotal').innerHTML = 'Sum of scores is ' + sum + ', which is less than 42. Re-roll!';
+                document.getElementById('finalScores').style.display = 'none';
+            } else if (sum > 62) {
+                document.getElementById('scoreTotal').innerHTML = 'Sum of scores is ' + sum + ', which is greater than 62. Re-roll!';
+                document.getElementById('finalScores').style.display = 'none';
+            } else {
+                remainder = 74 - sum;
+                document.getElementById('scoreTotal').innerHTML = 'Sum of scores is ' + sum + '. You can split ' + remainder + ' between your two final scores.';
+                document.getElementById('finalScores').style.display = 'block';
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            [...document.querySelectorAll('.rolledScores')].forEach(e => e.addEventListener('change', () => {
+                if ([...document.querySelectorAll('.rolledScores')].every(x => x.value !== '' && x.value !== undefined)) sumRolls();
+            }));
+            document.getElementById('score5').addEventListener('change', () => {
+                const diff = remainder - parseInt(document.getElementById('score5').value, 10);
+                if (diff < 6 || diff > 16) {
+                    document.getElementById('score6').value = '';
+                    document.getElementById('warning').innerHTML = 'Your last two scores must both be between 6 and 16!';
+                } else {
+                    document.getElementById('score6').value = diff;
+                    document.getElementById('warning').innerHTML = '';
+                }
+            });
+        });
+    </script>
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>
