@@ -23,6 +23,11 @@
   <link rel="stylesheet" href="../css/normalize.css">
   <link rel="stylesheet" href="../css/skeleton.css">
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jq-3.3.1/dt-1.10.23/b-1.6.5/b-print-1.6.5/fh-3.1.7/r-2.2.7/datatables.min.css"/>
+  <style>
+      #games_filter {
+          display: none;
+      }
+  </style>
 
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -55,7 +60,7 @@
                 const max = parseInt(d[2], 10);
                 const time = parseInt(d[3], 10);
 
-                if ((isNaN(p) && isNaN(t)) || (isNaN(p) && t <= time) || (p >= min && p <= max && isNaN(t)) || (p >= min && p <= max && t <= time)) return true;
+                if ((isNaN(p) && isNaN(t)) || (isNaN(p) && t >= time) || (p >= min && p <= max && isNaN(t)) || (p >= min && p <= max && t >= time)) return true;
                 else return false;
             }
         );
