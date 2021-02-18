@@ -1,0 +1,426 @@
+[
+  {
+    "Game": "Onitama",
+    "Min": 2,
+    "Max": 2,
+    "Time": 15,
+    "Expansions": true,
+    "Favorite": "Matt"
+  },
+  {
+    "Game": "Mice and Mystics",
+    "Min": 1,
+    "Max": 4,
+    "Time": 120,
+    "Expansions": false,
+    "Favorite": ""
+  },
+  {
+    "Game": "Boss Monster",
+    "Min": 2,
+    "Max": 4,
+    "Time": 30,
+    "Expansions": true,
+    "Favorite": ""
+  },
+  {
+    "Game": "Bunny Kingdom",
+    "Min": 2,
+    "Max": 5,
+    "Time": 45,
+    "Expansions": true,
+    "Favorite": "Matt, Daniel, Sunny"
+  },
+  {
+    "Game": "Disaster Looms",
+    "Min": 2,
+    "Max": 4,
+    "Time": 90,
+    "Expansions": false,
+    "Favorite": ""
+  },
+  {
+    "Game": "Dominion",
+    "Min": 2,
+    "Max": 4,
+    "Time": 30,
+    "Expansions": true,
+    "Favorite": "Matt, Daniel"
+  },
+  {
+    "Game": "Forbidden Island",
+    "Min": 2,
+    "Max": 4,
+    "Time": 30,
+    "Expansions": false,
+    "Favorite": ""
+  },
+  {
+    "Game": "Wiraqocha",
+    "Min": 2,
+    "Max": 4,
+    "Time": 60,
+    "Expansions": false,
+    "Favorite": "Daniel"
+  },
+  {
+    "Game": "Firefly",
+    "Min": 1,
+    "Max": 5,
+    "Time": 240,
+    "Expansions": true,
+    "Favorite": ""
+  },
+  {
+    "Game": "Legendary Encounters (Firefly)",
+    "Min": 1,
+    "Max": 5,
+    "Time": 90,
+    "Expansions": false,
+    "Favorite": ""
+  },
+  {
+    "Game": "Battle for Greyport",
+    "Min": 2,
+    "Max": 5,
+    "Time": 90,
+    "Expansions": false,
+    "Favorite": ""
+  },
+  {
+    "Game": "Exploding Kittens",
+    "Min": 2,
+    "Max": 5,
+    "Time": 15,
+    "Expansions": true,
+    "Favorite": ""
+  },
+  {
+    "Game": "Just Desserts",
+    "Min": 2,
+    "Max": 5,
+    "Time": 25,
+    "Expansions": false,
+    "Favorite": "Matt, Sunny"
+  },
+  {
+    "Game": "Sushi Go!",
+    "Min": 2,
+    "Max": 5,
+    "Time": 15,
+    "Expansions": false,
+    "Favorite": "Matt"
+  },
+  {
+    "Game": "Cosmic Encounter",
+    "Min": 3,
+    "Max": 5,
+    "Time": 120,
+    "Expansions": false,
+    "Favorite": ""
+  },
+  {
+    "Game": "Dreaming Spires",
+    "Min": 3,
+    "Max": 5,
+    "Time": 90,
+    "Expansions": false,
+    "Favorite": ""
+  },
+  {
+    "Game": "Ascension",
+    "Min": 1,
+    "Max": 6,
+    "Time": 45,
+    "Expansions": true,
+    "Favorite": "Matt, Daniel, Sunny"
+  },
+  {
+    "Game": "Star Trek Panic",
+    "Min": 1,
+    "Max": 6,
+    "Time": 90,
+    "Expansions": false,
+    "Favorite": ""
+  },
+  {
+    "Game": "Evolution",
+    "Min": 2,
+    "Max": 6,
+    "Time": 60,
+    "Expansions": false,
+    "Favorite": ""
+  },
+  {
+    "Game": "Fluxx",
+    "Min": 2,
+    "Max": 6,
+    "Time": 20,
+    "Expansions": true,
+    "Favorite": ""
+  },
+  {
+    "Game": "Lords of Waterdeep",
+    "Min": 2,
+    "Max": 6,
+    "Time": 60,
+    "Expansions": true,
+    "Favorite": "Matt, Sunny"
+  },
+  {
+    "Game": "Pandemic",
+    "Min": 2,
+    "Max": 6,
+    "Time": 45,
+    "Expansions": true,
+    "Favorite": ""
+  },
+  {
+    "Game": "Power Grid",
+    "Min": 2,
+    "Max": 6,
+    "Time": 120,
+    "Expansions": false,
+    "Favorite": ""
+  },
+  {
+    "Game": "Betrayal at Baldur's Gate",
+    "Min": 3,
+    "Max": 6,
+    "Time": 60,
+    "Expansions": false,
+    "Favorite": ""
+  },
+  {
+    "Game": "Betrayal at House on the Hill",
+    "Min": 3,
+    "Max": 6,
+    "Time": 60,
+    "Expansions": true,
+    "Favorite": ""
+  },
+  {
+    "Game": "Settlers of Catan",
+    "Min": 3,
+    "Max": 6,
+    "Time": 90,
+    "Expansions": true,
+    "Favorite": "Daniel, Sunny"
+  },
+  {
+    "Game": "7 Wonders",
+    "Min": 2,
+    "Max": 7,
+    "Time": 30,
+    "Expansions": false,
+    "Favorite": ""
+  },
+  {
+    "Game": "Battlestar Galactica",
+    "Min": 3,
+    "Max": 7,
+    "Time": 300,
+    "Expansions": true,
+    "Favorite": "Daniel, Sunny"
+  },
+  {
+    "Game": "Arkham Horror",
+    "Min": 1,
+    "Max": 8,
+    "Time": 360,
+    "Expansions": false,
+    "Favorite": ""
+  },
+  {
+    "Game": "Codenames",
+    "Min": 2,
+    "Max": 8,
+    "Time": 15,
+    "Expansions": true,
+    "Favorite": "Daniel"
+  },
+  {
+    "Game": "Love Letter",
+    "Min": 2,
+    "Max": 8,
+    "Time": 30,
+    "Expansions": true,
+    "Favorite": "Matt, Sunny"
+  },
+  {
+    "Game": "The Red Dragon Inn",
+    "Min": 2,
+    "Max": 10,
+    "Time": 45,
+    "Expansions": true,
+    "Favorite": "Sunny"
+  },
+  {
+    "Game": "Apples to Apples",
+    "Min": 4,
+    "Max": 10,
+    "Time": 30,
+    "Expansions": false,
+    "Favorite": ""
+  },
+  {
+    "Game": "Jackbox Games",
+    "Min": 3,
+    "Max": 8,
+    "Time": 25,
+    "Expansions": true,
+    "Favorite": ""
+  },
+  {
+    "Game": "Azul",
+    "Min": 2,
+    "Max": 4,
+    "Time": 45,
+    "Expansions": false,
+    "Favorite": "Matt"
+  },
+  {
+    "Game": "Ticket to Ride",
+    "Min": 2,
+    "Max": 5,
+    "Time": 60,
+    "Expansions": false,
+    "Favorite": ""
+  },
+  {
+    "Game": "Pitchstorm",
+    "Min": 3,
+    "Max": 12,
+    "Time": 30,
+    "Expansions": true,
+    "Favorite": ""
+  },
+  {
+    "Game": "Superfight",
+    "Min": 3,
+    "Max": 10,
+    "Time": 30,
+    "Expansions": true,
+    "Favorite": "Sunny"
+  },
+  {
+    "Game": "Tea Dragon Society Card Game",
+    "Min": 2,
+    "Max": 4,
+    "Time": 45,
+    "Expansions": false,
+    "Favorite": ""
+  },
+  {
+    "Game": "Shiba Inu House",
+    "Min": 1,
+    "Max": 5,
+    "Time": 30,
+    "Expansions": false,
+    "Favorite": ""
+  },
+  {
+    "Game": "Unstable Unicorns",
+    "Min": 2,
+    "Max": 8,
+    "Time": 45,
+    "Expansions": true,
+    "Favorite": "Sunny"
+  },
+  {
+    "Game": "The Bears and the Bees",
+    "Min": 2,
+    "Max": 5,
+    "Time": 30,
+    "Expansions": false,
+    "Favorite": ""
+  },
+  {
+    "Game": "Ohanami",
+    "Min": 2,
+    "Max": 4,
+    "Time": 20,
+    "Expansions": false,
+    "Favorite": ""
+  },
+  {
+    "Game": "Here to Slay",
+    "Min": 2,
+    "Max": 6,
+    "Time": 60,
+    "Expansions": false,
+    "Favorite": ""
+  },
+  {
+    "Game": "Disney Villainous",
+    "Min": 2,
+    "Max": 6,
+    "Time": 50,
+    "Expansions": true,
+    "Favorite": ""
+  },
+  {
+    "Game": "The Fox in the Forest",
+    "Min": 2,
+    "Max": 2,
+    "Time": 30,
+    "Expansions": true,
+    "Favorite": ""
+  },
+  {
+    "Game": "Wizard Kittens",
+    "Min": 2,
+    "Max": 5,
+    "Time": 20,
+    "Expansions": true,
+    "Favorite": ""
+  },
+  {
+    "Game": "Mountains of Madness",
+    "Min": 3,
+    "Max": 5,
+    "Time": 60,
+    "Expansions": false,
+    "Favorite": ""
+  },
+  {
+    "Game": "Vault of Dragons",
+    "Min": 2,
+    "Max": 4,
+    "Time": 90,
+    "Expansions": false,
+    "Favorite": ""
+  },
+  {
+    "Game": "Dragonwood",
+    "Min": 2,
+    "Max": 4,
+    "Time": 20,
+    "Expansions": false,
+    "Favorite": ""
+  },
+  {
+    "Game": "My First Castle Panic",
+    "Min": 1,
+    "Max": 4,
+    "Time": 20,
+    "Expansions": false,
+    "Favorite": ""
+  },
+  {
+    "Game": "Karnickel",
+    "Min": 2,
+    "Max": 4,
+    "Time": 15,
+    "Expansions": false,
+    "Favorite": ""
+  },
+  {
+    "Game": "Dragonfire",
+    "Min": 2,
+    "Max": 6,
+    "Time": 75,
+    "Expansions": false,
+    "Favorite": ""
+  }
+]
