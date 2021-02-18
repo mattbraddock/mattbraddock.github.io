@@ -45,15 +45,15 @@
 
     <!-- JAVASCRIPT
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/jq-3.3.1/dt-1.10.23/b-1.6.5/b-print-1.6.5/fh-3.1.7/r-2.2.7/datatables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/jq-3.5.1/dt-1.10.23/b-1.6.5/b-print-1.6.5/fh-3.1.7/r-2.2.7/datatables.min.js"></script>
     <script>
         $.fn.dataTable.ext.search.push(
             function(s, d, i) {
                 const p = parseInt($('#players').val(), 10);
                 const t = parseInt($('#time').val(), 10);
-                const min = parseInt(d[1], 10) || 0;
-                const max = parseInt(d[2], 10) || 0;
-                const time = parseInt(d[3], 10) || 0;
+                const min = parseInt(d[1], 10);
+                const max = parseInt(d[2], 10);
+                const time = parseInt(d[3], 10);
 
                 if ((isNaN(p) && isNaN(t)) || (isNaN(p) && t <= time) || (p >= min && p <= max && isNaN(t)) || (p >= min && p <= max && t <= time)) return true;
                 else return false;
