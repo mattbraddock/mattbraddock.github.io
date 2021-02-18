@@ -124,7 +124,7 @@
                 const sumArr = sumOfDice(arr);
                 document.getElementById('score' + score).value = sumArr[1];
                 const dice = [...document.querySelectorAll('.die')];
-                dice.find(d => d.id.includes('s' + score + 'd') && d.src.includes('..images/on_d' + sumArr[0] + '.png')).src = '../images/off_d' + sumArr[0] + '.png';
+                dice.find(d => d.id.includes('s' + score + 'd') && d.src.includes('images/on_d' + sumArr[0] + '.png')).src = '../images/off_d' + sumArr[0] + '.png';
             }
             for (let i = 1; i <= 4; i++) displayInfo(Array.from(Array(4), v => randomInt(1, 6)), i.toString());
             sumRolls();
