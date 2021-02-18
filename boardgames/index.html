@@ -62,7 +62,7 @@
         $(document).ready(async () => {
             const response = await fetch('https://raw.githubusercontent.com/mattbraddock/mattbraddock.github.io/main/boardgames/games.json');
             const dataSet = await response.json();
-            var gameTable = $('#games').DataTable({
+            const gameTable = $('#games').DataTable({
                 data: dataSet,
                 scrollY: '400px',
                 scrollCollapse: true,
@@ -77,8 +77,10 @@
                     {title: 'Favorite of...', data: 'Favorite'}
                 ]
             });
+            $('#players, #time').keyup(function() {
+                gameTable.draw();
+            });
         });
-        $('#players, #time').keyup(() => gameTable.draw());
     </script>
 
 <!-- End Document
