@@ -41,7 +41,12 @@
     <div class="container">
         <h2>Board Games</h2>
         <div class="row">
-            Players: <input type="number" id="players" step="1" />&nbsp; Time: <input type="number" id="time" step="1" />
+            <div class="six columns">
+                Players: <input type="number" id="players" step="1" />
+            </div>
+            <div class="six columns">
+                Time: <input type="number" id="time" step="1" />
+            </div>
         </div>
         <div class="row" style="margin-top: 5%; margin-bottom: 5%;">
             <table id="games" class="compact hover" width="100%"></table>
@@ -69,6 +74,7 @@
             const dataSet = await response.json();
             const gameTable = $('#games').DataTable({
                 data: dataSet,
+                scrollX: true,
                 scrollY: '400px',
                 scrollCollapse: true,
                 paging: false,
