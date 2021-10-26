@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Basic Page Needs
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta charset="utf-8">
+    <title>Grade Calculator</title>
+    <meta name="description" content="Calculates grades based on HCPSS policy 8020">
+    <meta name="author" content="Matt Braddock">
+
+    <!-- Mobile Specific Metas
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- FONT
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@600&display=swap" rel="stylesheet">
+
+    <!-- CSS
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/skeleton.css">
+
+    <!-- Favicon
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+
+</head>
+<body>
+
+    <!-- Primary Page Layout
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <div class="container">
+        <div class="row">
+            <h2>Grade Calculator</h2>
+        </div>
+        <div class="row">
+            <p>Calculates grades based on the updated 2021-22 policy 8020.<br>Each quarter grade is worth 22.5% and both the midterm and final are worth 5% each.</p> 
+        </div>
+        <div class="row">
+            <p>
+                <label for="qtr1">Quarter 1</label>&nbsp;<select name="qtr1" id="qtr1" class="qtr" onchange="calc()">
+                    <option value="4">A</option>
+                    <option value="3" selected>B</option>
+                    <option value="2">C</option>
+                    <option value="1">D</option>
+                    <option value="0">E</option>
+                </select>
+                <br>
+                <label for="qtr2">Quarter 2</label>&nbsp;<select name="qtr2" id="qtr2" class="qtr" onchange="calc()">
+                    <option value="4">A</option>
+                    <option value="3" selected>B</option>
+                    <option value="2">C</option>
+                    <option value="1">D</option>
+                    <option value="0">E</option>
+                </select>
+                <br>
+                <label for="mid">Midterm</label>&nbsp;<select name="mid" id="mid" class="exam" onchange="calc()">
+                    <option value="4">A</option>
+                    <option value="3" selected>B</option>
+                    <option value="2">C</option>
+                    <option value="1">D</option>
+                    <option value="0">E</option>
+                </select>
+                <br>
+                <label for="qtr3">Quarter 3</label>&nbsp;<select name="qtr3" id="qtr3" class="qtr" onchange="calc()">
+                    <option value="4">A</option>
+                    <option value="3" selected>B</option>
+                    <option value="2">C</option>
+                    <option value="1">D</option>
+                    <option value="0">E</option>
+                </select>
+                <br>
+                <label for="qtr4">Quarter 4</label>&nbsp;<select name="qtr4" id="qtr4" class="qtr" onchange="calc()">
+                    <option value="4">A</option>
+                    <option value="3" selected>B</option>
+                    <option value="2">C</option>
+                    <option value="1">D</option>
+                    <option value="0">E</option>
+                </select>
+                <br>
+                <label for="fin">Final</label>&nbsp;<select name="fin" id="fin" class="exam" onchange="calc()">
+                    <option value="4">A</option>
+                    <option value="3" selected>B</option>
+                    <option value="2">C</option>
+                    <option value="1">D</option>
+                    <option value="0">E</option>
+                </select>
+            </p>
+        </div>
+        <div class="row">
+            <p>Course grade: <span id="grade">B</span></p>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <script>
+        const calc = () => {
+            const qtrSum = [...document.querySelectorAll(".qtr")].reduce((x,y) => x += parseInt(y.value), 0);
+            const examSum = [...document.querySelectorAll(".exam")].reduce((x,y) => x += parseInt(y.value), 0);
+            const total = (qtrSum * (9 / 40)) + (examSum * (1 / 20));
+            document.getElementById("grade").innerText = total >= 3.5 ? 'A' : total >= 2.5 ? 'B' : total >= 1.5 ? 'C' : total >= 0.75 ? 'D' : 'E';
+        }
+    </script>
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>
