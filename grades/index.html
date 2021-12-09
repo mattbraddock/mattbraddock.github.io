@@ -93,6 +93,39 @@
         <div class="row">
             <p>Course grade: <span id="grade">B</span></p>
         </div>
+        <div class="row">
+            <p>
+                <h3>Semester Courses</h3>
+                <p>Each quarter grade is worth 47.5% and the final is worth 5%.</p>
+                <br>
+                <label for="qtr1s">Quarter 1</label>&nbsp;<select name="qtr1s" id="qtr1s" class="qtrs" onchange="calcSem()">
+                    <option value="4">A</option>
+                    <option value="3" selected>B</option>
+                    <option value="2">C</option>
+                    <option value="1">D</option>
+                    <option value="0">E</option>
+                </select>
+                <br>
+                <label for="qtr2s">Quarter 2</label>&nbsp;<select name="qtr2s" id="qtr2s" class="qtrs" onchange="calcSem()">
+                    <option value="4">A</option>
+                    <option value="3" selected>B</option>
+                    <option value="2">C</option>
+                    <option value="1">D</option>
+                    <option value="0">E</option>
+                </select>
+                <br>
+                <label for="fins">Final</label>&nbsp;<select name="fins" id="fins" class="exams" onchange="calcSem()">
+                    <option value="4">A</option>
+                    <option value="3" selected>B</option>
+                    <option value="2">C</option>
+                    <option value="1">D</option>
+                    <option value="0">E</option>
+                </select>
+            </p>
+        </div>
+        <div class="row">
+            <p>Course grade: <span id="grades">B</span></p>
+        </div>
     </div>
 
     <!-- JAVASCRIPT
@@ -103,6 +136,12 @@
             const examSum = [...document.querySelectorAll(".exam")].reduce((x,y) => x += parseInt(y.value), 0);
             const total = (qtrSum * (9 / 40)) + (examSum * (1 / 20));
             document.getElementById("grade").innerText = total >= 3.5 ? 'A' : total >= 2.5 ? 'B' : total >= 1.5 ? 'C' : total >= 0.75 ? 'D' : 'E';
+        }
+        const calcSem = () => {
+            const qtrSum = [...document.querySelectorAll(".qtrs")].reduce((x,y) => x += parseInt(y.value), 0);
+            const examSum = [...document.querySelectorAll(".exams")].reduce((x,y) => x += parseInt(y.value), 0);
+            const total = (qtrSum * (19 / 40)) + (examSum * (1 / 20));
+            document.getElementById("grades").innerText = total >= 3.5 ? 'A' : total >= 2.5 ? 'B' : total >= 1.5 ? 'C' : total >= 0.75 ? 'D' : 'E';
         }
     </script>
 
