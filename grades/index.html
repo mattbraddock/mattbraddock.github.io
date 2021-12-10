@@ -37,93 +37,93 @@
             <h2>Grade Calculator</h2>
         </div>
         <div class="row">
-            <p>Calculates grades based on the updated 2021-22 policy 8020.<br>Each quarter grade is worth 22.5% and both the midterm and final are worth 5% each.</p> 
+            <p>Calculates grades based on the updated 2021-22 policy 8020.</p> 
         </div>
         <div class="row">
-            <p>
-                <label for="qtr1">Quarter 1</label>&nbsp;<select name="qtr1" id="qtr1" class="qtr" onchange="calc()">
-                    <option value="4">A</option>
-                    <option value="3" selected>B</option>
-                    <option value="2">C</option>
-                    <option value="1">D</option>
-                    <option value="0">E</option>
-                </select>
-                <br>
-                <label for="qtr2">Quarter 2</label>&nbsp;<select name="qtr2" id="qtr2" class="qtr" onchange="calc()">
-                    <option value="4">A</option>
-                    <option value="3" selected>B</option>
-                    <option value="2">C</option>
-                    <option value="1">D</option>
-                    <option value="0">E</option>
-                </select>
-                <br>
-                <label for="mid">Midterm</label>&nbsp;<select name="mid" id="mid" class="exam" onchange="calc()">
-                    <option value="4">A</option>
-                    <option value="3" selected>B</option>
-                    <option value="2">C</option>
-                    <option value="1">D</option>
-                    <option value="0">E</option>
-                </select>
-                <br>
-                <label for="qtr3">Quarter 3</label>&nbsp;<select name="qtr3" id="qtr3" class="qtr" onchange="calc()">
-                    <option value="4">A</option>
-                    <option value="3" selected>B</option>
-                    <option value="2">C</option>
-                    <option value="1">D</option>
-                    <option value="0">E</option>
-                </select>
-                <br>
-                <label for="qtr4">Quarter 4</label>&nbsp;<select name="qtr4" id="qtr4" class="qtr" onchange="calc()">
-                    <option value="4">A</option>
-                    <option value="3" selected>B</option>
-                    <option value="2">C</option>
-                    <option value="1">D</option>
-                    <option value="0">E</option>
-                </select>
-                <br>
-                <label for="fin">Final</label>&nbsp;<select name="fin" id="fin" class="exam" onchange="calc()">
-                    <option value="4">A</option>
-                    <option value="3" selected>B</option>
-                    <option value="2">C</option>
-                    <option value="1">D</option>
-                    <option value="0">E</option>
-                </select>
-            </p>
-        </div>
-        <div class="row">
-            <p>Course grade: <span id="grade">B</span></p>
-        </div>
-        <div class="row">
-            <p>
-                <h3>Semester Courses</h3>
-                <p>Each quarter grade is worth 47.5% and the final is worth 5%.</p>
-                <label for="qtr1s">Quarter 1</label>&nbsp;<select name="qtr1s" id="qtr1s" class="qtrs" onchange="calcSem()">
-                    <option value="4">A</option>
-                    <option value="3" selected>B</option>
-                    <option value="2">C</option>
-                    <option value="1">D</option>
-                    <option value="0">E</option>
-                </select>
-                <br>
-                <label for="qtr2s">Quarter 2</label>&nbsp;<select name="qtr2s" id="qtr2s" class="qtrs" onchange="calcSem()">
-                    <option value="4">A</option>
-                    <option value="3" selected>B</option>
-                    <option value="2">C</option>
-                    <option value="1">D</option>
-                    <option value="0">E</option>
-                </select>
-                <br>
-                <label for="fins">Final</label>&nbsp;<select name="fins" id="fins" class="exams" onchange="calcSem()">
-                    <option value="4">A</option>
-                    <option value="3" selected>B</option>
-                    <option value="2">C</option>
-                    <option value="1">D</option>
-                    <option value="0">E</option>
-                </select>
-            </p>
-        </div>
-        <div class="row">
-            <p>Course grade: <span id="grades">B</span></p>
+            <div class="six columns">
+                <p>
+                    <h5>Full Year Courses</h5>
+                    <p>Each quarter grade is worth 22.5%.<br>Both the midterm and final are worth 5% each.</p>
+                    <label for="qtr1">Quarter 1</label>&nbsp;<select name="qtr1" id="qtr1" class="qtr" onchange="calc()">
+                        <option value="4">A</option>
+                        <option value="3" selected>B</option>
+                        <option value="2">C</option>
+                        <option value="1">D</option>
+                        <option value="0">E</option>
+                    </select>
+                    <br>
+                    <label for="qtr2">Quarter 2</label>&nbsp;<select name="qtr2" id="qtr2" class="qtr" onchange="calc()">
+                        <option value="4">A</option>
+                        <option value="3" selected>B</option>
+                        <option value="2">C</option>
+                        <option value="1">D</option>
+                        <option value="0">E</option>
+                    </select>
+                    <br>
+                    <label for="mid">Midterm</label>&nbsp;<select name="mid" id="mid" class="exam" onchange="calc()">
+                        <option value="4">A</option>
+                        <option value="3" selected>B</option>
+                        <option value="2">C</option>
+                        <option value="1">D</option>
+                        <option value="0">E</option>
+                    </select>
+                    <br>
+                    <label for="qtr3">Quarter 3</label>&nbsp;<select name="qtr3" id="qtr3" class="qtr" onchange="calc()">
+                        <option value="4">A</option>
+                        <option value="3" selected>B</option>
+                        <option value="2">C</option>
+                        <option value="1">D</option>
+                        <option value="0">E</option>
+                    </select>
+                    <br>
+                    <label for="qtr4">Quarter 4</label>&nbsp;<select name="qtr4" id="qtr4" class="qtr" onchange="calc()">
+                        <option value="4">A</option>
+                        <option value="3" selected>B</option>
+                        <option value="2">C</option>
+                        <option value="1">D</option>
+                        <option value="0">E</option>
+                    </select>
+                    <br>
+                    <label for="fin">Final</label>&nbsp;<select name="fin" id="fin" class="exam" onchange="calc()">
+                        <option value="4">A</option>
+                        <option value="3" selected>B</option>
+                        <option value="2">C</option>
+                        <option value="1">D</option>
+                        <option value="0">E</option>
+                    </select>
+                </p>
+                <p>Course grade: <span id="grade">B</span></p>
+            </div>
+            <div class="six columns">
+                <p>
+                    <h5>Semester Courses</h5>
+                    <p>Each quarter grade is worth 47.5%.<br>The final is worth 5%.</p>
+                    <label for="qtr1s">Quarter 1</label>&nbsp;<select name="qtr1s" id="qtr1s" class="qtrs" onchange="calcSem()">
+                        <option value="4">A</option>
+                        <option value="3" selected>B</option>
+                        <option value="2">C</option>
+                        <option value="1">D</option>
+                        <option value="0">E</option>
+                    </select>
+                    <br>
+                    <label for="qtr2s">Quarter 2</label>&nbsp;<select name="qtr2s" id="qtr2s" class="qtrs" onchange="calcSem()">
+                        <option value="4">A</option>
+                        <option value="3" selected>B</option>
+                        <option value="2">C</option>
+                        <option value="1">D</option>
+                        <option value="0">E</option>
+                    </select>
+                    <br>
+                    <label for="fins">Final</label>&nbsp;<select name="fins" id="fins" class="exams" onchange="calcSem()">
+                        <option value="4">A</option>
+                        <option value="3" selected>B</option>
+                        <option value="2">C</option>
+                        <option value="1">D</option>
+                        <option value="0">E</option>
+                    </select>
+                </p>
+                <p>Course grade: <span id="grades">B</span></p>
+            </div>
         </div>
     </div>
 
