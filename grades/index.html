@@ -133,7 +133,10 @@
         const calc = () => {
             const qtrSum = [...document.querySelectorAll(".qtr")].reduce((x,y) => x += parseInt(y.value), 0);
             const examSum = [...document.querySelectorAll(".exam")].reduce((x,y) => x += parseInt(y.value), 0);
-            const total = (qtrSum * (9 / 40)) + (examSum * (1 / 20));
+            let total = (qtrSum * (9 / 40)) + (examSum * (1 / 20));
+            const qtr3 = document.getElementById("qtr3").value;
+            const qtr4 = document.getElementById("qtr4").value;
+            if (parseInt(qtr3) + parseInt(qtr4) === 0) total = 0;
             document.getElementById("grade").innerText = total >= 3.5 ? 'A' : total >= 2.5 ? 'B' : total >= 1.5 ? 'C' : total >= 0.75 ? 'D' : 'E';
         }
         const calcSem = () => {
