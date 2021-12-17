@@ -43,7 +43,7 @@
             <div class="six columns">
                 <p>
                     <h5>Full Year Courses</h5>
-                    <p>Each quarter grade is worth 22.5%.<br>Both the midterm and final are worth 5% each.</p>
+                    <p>Each quarter grade is worth 22.5%.<br>The final is worth 10%.</p>
                     <label for="qtr1">Quarter 1</label>&nbsp;<select name="qtr1" id="qtr1" class="qtr" onchange="calc()">
                         <option value="4">A</option>
                         <option value="3" selected>B</option>
@@ -59,7 +59,7 @@
                         <option value="1">D</option>
                         <option value="0">E</option>
                     </select>
-                    <br>
+                    <br><!--
                     <label for="mid">Midterm</label>&nbsp;<select name="mid" id="mid" class="exam" onchange="calc()">
                         <option value="4">A</option>
                         <option value="3" selected>B</option>
@@ -67,7 +67,7 @@
                         <option value="1">D</option>
                         <option value="0">E</option>
                     </select>
-                    <br>
+                    <br>-->
                     <label for="qtr3">Quarter 3</label>&nbsp;<select name="qtr3" id="qtr3" class="qtr" onchange="calc()">
                         <option value="4">A</option>
                         <option value="3" selected>B</option>
@@ -133,7 +133,7 @@
         const calc = () => {
             const qtrSum = [...document.querySelectorAll(".qtr")].reduce((x,y) => x += parseInt(y.value), 0);
             const examSum = [...document.querySelectorAll(".exam")].reduce((x,y) => x += parseInt(y.value), 0);
-            let total = (qtrSum * (9 / 40)) + (examSum * (1 / 20));
+            let total = (qtrSum * (9 / 40)) + (examSum * (1 / 10));
             const qtr3 = document.getElementById("qtr3").value;
             const qtr4 = document.getElementById("qtr4").value;
             if (parseInt(qtr3) + parseInt(qtr4) === 0) total = 0;
