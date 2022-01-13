@@ -97,7 +97,7 @@
             <div class="six columns">
                 <p>
                     <h5>Semester Courses</h5>
-                    <p>Each quarter grade is worth 47.5%.<br>The final is worth 5%.</p>
+                    <p>Each quarter grade is worth 50%.</p>
                     <label for="qtr1s">Quarter 1</label>&nbsp;<select name="qtr1s" id="qtr1s" class="qtrs" onchange="calcSem()">
                         <option value="4">A</option>
                         <option value="3" selected>B</option>
@@ -112,7 +112,7 @@
                         <option value="2">C</option>
                         <option value="1">D</option>
                         <option value="0">E</option>
-                    </select>
+                    </select><!--
                     <br>
                     <label for="fins">Final</label>&nbsp;<select name="fins" id="fins" class="exams" onchange="calcSem()">
                         <option value="4">A</option>
@@ -120,7 +120,7 @@
                         <option value="2">C</option>
                         <option value="1">D</option>
                         <option value="0">E</option>
-                    </select>
+                    </select>-->
                 </p>
                 <p>Course grade: <span id="grades">B</span></p>
             </div>
@@ -142,7 +142,7 @@
         const calcSem = () => {
             const qtrSum = [...document.querySelectorAll(".qtrs")].reduce((x,y) => x += parseInt(y.value), 0);
             const examSum = [...document.querySelectorAll(".exams")].reduce((x,y) => x += parseInt(y.value), 0);
-            const total = (qtrSum * (19 / 40)) + (examSum * (1 / 20));
+            const total = qtrSum * (1 / 2);
             document.getElementById("grades").innerText = total >= 3.5 ? 'A' : total >= 2.5 ? 'B' : total >= 1.5 ? 'C' : total >= 0.75 ? 'D' : 'E';
         }
     </script>
