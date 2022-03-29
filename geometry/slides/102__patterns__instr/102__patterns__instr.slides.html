@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex">
+		<meta name="author" content="Matt Braddock" />
+		<meta name="date" content="2022-03-29" />
+		
+
+		<title>1.02 - Patterns &amp; Instructions</title>
+
+		
+		<link rel="stylesheet" id="customiseCodeCSS" href="../../static/pygmentize.light.css">
+		<link rel="stylesheet" href="../../static/reveal.js/dist/reveal.css">
+		<link id="customiseCSS" rel="stylesheet" href="../../static/reveal.js/dist/theme/light.css">
+		<link rel="stylesheet" href="../../static/slides.css">
+		<link rel="stylesheet" href="../../static/codemirror-5.26.0/lib/codemirror.css">
+		<link rel="stylesheet" href="../../static/boole.css">
+		
+		
+		
+
+		
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+		<script defer src="../../static/mathjax_config.js"></script>
+		<script type="text/javascript" id="MathJax-script" defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+		<script defer src="../../static/jquery.flexibleArea.js"></script>
+		<script defer src="../../static/spin.min.js"></script>
+		<script src="../../static/customisation.js"></script>
+		<script defer src="../../static/mp4.js"></script>
+		<script src="../../static/boole.js"></script>
+		<script>
+			if( window.location.search.match( /print-pdf/gi )){
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = "../../static/reveal.js/css/print/pdf.css";
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = "../../static/slides_print.css";
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+		
+		
+		
+
+	</head>
+	<body >
+		<div class="reveal">
+
+			
+			<div class="header-l">1.02 - Patterns &amp; Instructions</div>
+			<div class="header-r">Matt Braddock</div>
+			
+
+			<div class="slides">
+				
+					
+					<section id="title-slide">
+						<h1 class="title">1.02 - Patterns &amp; Instructions</h1>
+						<p class="author">Matt Braddock</p>
+					</section>
+					
+				
+
+				
+				<section data-splitter data-separator="<hr/?>" data-separator-notes="^Data-Note:">
+					<textarea data-template>
+						<p>﻿## Objective(s)
+* Follow instructions to create a construction
+* Use precise mathematical language to describe a construction</p>
+<p>Required materials: compass, straightedge</p>
+<hr/>
+<section class="section2"><h2>Warm Up</h2>
+<p>Explain why each statement is true.
+* Length of <script type="math/tex">\overline{EA}</script> is equal to the length of <script type="math/tex">\overline{EB}</script>
+* <script type="math/tex">\Delta ABF</script> is equilateral
+* <script type="math/tex">AB=\frac{1}{3}CD</script>
+* <script type="math/tex">CB=DA</script>
+</p>
+<p>(image)</p>
+<hr/>
+</section><section class="section2"><h2>DIY Patterns</h2>
+<p>From the given circle &amp; radius, build a pattern using compass and straightedge moves. After each step, write down <em>precise</em> instructions (on a separate sheet of paper) so someone else can make a perfect copy.
+. . .
+Swap instructions with a neighbor, but do not let them see your finished pattern!</p>
+<hr/>
+<section class="section3"><h3>Discussion</h3>
+<div class="fragment">
+</div><hr/>
+</section></section><section class="section2"><h2>Summary</h2>
+<p>Compass and straightedge moves can be used to create interesting patterns. However, for the patterns to be recreated, precise instructions must be made. Labelling points and segments are helpful in creating clear directions.</p>
+</section>
+					</textarea>
+				</section>
+				
+
+			</div>
+
+		</div>
+		<script src="../../static/reveal.js/dist/reveal.js"></script>
+		<script>
+			Reveal.initialize({
+				hash: true,
+				history: true,
+				dependencies: [
+					{ src: "../../static/reveal.js/plugin/splitter/splitter.js" },
+					{ src: "../../static/reveal.js/plugin/notes/notes.js", async: true },
+					{ src: "../../static/reveal.js/plugin/highlight/highlight.js", async: true }
+				]
+			});
+			Reveal.on( 'ready', event => {
+				try {
+					MathJax.startup.defaultPageReady();
+				} catch(err) {
+					console.log('Problem running MathJax.startup.defaultPageReady()');
+				}
+				mp4ImageFallback();
+				updateThemeBodyTag();
+			});
+		</script>
+	</body>
+</html>
