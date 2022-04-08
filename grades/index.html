@@ -34,7 +34,7 @@
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <div class="container">
         <div class="row">
-            <h2>Grade Calculator</h2>
+            <h2>Course Grade & GPA Calculators</h2>
         </div>
         <div class="row">
             <p>Calculates grades based on the updated 2021-22 policy 8020.</p> 
@@ -125,25 +125,160 @@
                 <p>Course grade: <span id="grades">B</span></p>
             </div>
         </div>
+        <div class="row">
+            <p>Calculate grade point average.</p>
+        </div>
+        <div class="row">
+            <div class="four columns">
+                <p>
+                    <label for="course1">Course #1 Grade</label>&nbsp;<select name="course1" id="course1" class="course" onchange="calcGPA()">
+                        <option value="4">A</option>
+                        <option value="3" selected>B</option>
+                        <option value="2">C</option>
+                        <option value="1">D</option>
+                        <option value="0">E</option>
+                    </select>
+                    <br>
+                    <label for="course2">Course #2 Grade</label>&nbsp;<select name="course2" id="course2" class="course" onchange="calcGPA()">
+                        <option value="4">A</option>
+                        <option value="3" selected>B</option>
+                        <option value="2">C</option>
+                        <option value="1">D</option>
+                        <option value="0">E</option>
+                    </select>
+                    <br>
+                    <label for="course3">Course #3 Grade</label>&nbsp;<select name="course3" id="course3" class="course" onchange="calcGPA()">
+                        <option value="4">A</option>
+                        <option value="3" selected>B</option>
+                        <option value="2">C</option>
+                        <option value="1">D</option>
+                        <option value="0">E</option>
+                    </select>
+                    <br>
+                    <label for="course4">Course #4 Grade</label>&nbsp;<select name="course4" id="course4" class="course" onchange="calcGPA()">
+                        <option value="4">A</option>
+                        <option value="3" selected>B</option>
+                        <option value="2">C</option>
+                        <option value="1">D</option>
+                        <option value="0">E</option>
+                    </select>
+                    <br>
+                    <label for="course5">Course #5 Grade</label>&nbsp;<select name="course5" id="course5" class="course" onchange="calcGPA()">
+                        <option value="4">A</option>
+                        <option value="3" selected>B</option>
+                        <option value="2">C</option>
+                        <option value="1">D</option>
+                        <option value="0">E</option>
+                    </select>
+                    <br>
+                    <label for="course6">Course #6 Grade</label>&nbsp;<select name="course6" id="course6" class="course" onchange="calcGPA()">
+                        <option value="4">A</option>
+                        <option value="3" selected>B</option>
+                        <option value="2">C</option>
+                        <option value="1">D</option>
+                        <option value="0">E</option>
+                    </select>
+                    <br>
+                    <label for="course7">Course #7 Grade</label>&nbsp;<select name="course7" id="course7" class="course" onchange="calcGPA()">
+                        <option value="4">A</option>
+                        <option value="3" selected>B</option>
+                        <option value="2">C</option>
+                        <option value="1">D</option>
+                        <option value="0">E</option>
+                    </select>
+                </p>
+            </div>
+            <div class="four columns">
+                <p>
+                    <label for="type1">Course #1 Type</label>&nbsp;<select name="type1" id="type1" class="type" onchange="calcGPA()">
+                        <option value="1">AP or G/T</option>
+                        <option value="0.5">Honors</option>
+                        <option value="0" select>Regular</option>
+                    </select>
+                    <br>
+                    <label for="type2">Course #2 Type</label>&nbsp;<select name="type2" id="type2" class="type" onchange="calcGPA()">
+                        <option value="1">AP or G/T</option>
+                        <option value="0.5">Honors</option>
+                        <option value="0" select>Regular</option>
+                    </select>
+                    <br>
+                    <label for="type3">Course #3 Type</label>&nbsp;<select name="type3" id="type3" class="type" onchange="calcGPA()">
+                        <option value="1">AP or G/T</option>
+                        <option value="0.5">Honors</option>
+                        <option value="0" select>Regular</option>
+                    </select>
+                    <br>
+                    <label for="type4">Course #4 Type</label>&nbsp;<select name="type4" id="type4" class="type" onchange="calcGPA()">
+                        <option value="1">AP or G/T</option>
+                        <option value="0.5">Honors</option>
+                        <option value="0" select>Regular</option>
+                    </select>
+                    <br>
+                    <label for="type5">Course #5 Type</label>&nbsp;<select name="type5" id="type5" class="type" onchange="calcGPA()">
+                        <option value="1">AP or G/T</option>
+                        <option value="0.5">Honors</option>
+                        <option value="0" select>Regular</option>
+                    </select>
+                    <br>
+                    <label for="type6">Course #6 Type</label>&nbsp;<select name="type6" id="type6" class="type" onchange="calcGPA()">
+                        <option value="1">AP or G/T</option>
+                        <option value="0.5">Honors</option>
+                        <option value="0" select>Regular</option>
+                    </select>
+                    <br>
+                    <label for="type7">Course #7 Type</label>&nbsp;<select name="type7" id="type7" class="type" onchange="calcGPA()">
+                        <option value="1">AP or G/T</option>
+                        <option value="0.5">Honors</option>
+                        <option value="0" select>Regular</option>
+                    </select>
+                </p>
+            </div>
+            <div class="four columns">
+                <p>
+                    <label for="classcount">Number of Classes</label>&nbsp;<select name="classcount" id="classcount" onchange="calcGPA()">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7" selected>7</option>
+                    </select>
+                </p>
+                <p>Unweighted GPA: <span id="ungpa">3.00</span></p>
+                <p>Weighted GPA: <span id="wgpa">3.00</span></p>
+            </div>
+        </div>
     </div>
 
     <!-- JAVASCRIPT
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <script>
         const calc = () => {
-            const qtrSum = [...document.querySelectorAll(".qtr")].reduce((x,y) => x += parseInt(y.value), 0);
-            const examSum = [...document.querySelectorAll(".exam")].reduce((x,y) => x += parseInt(y.value), 0);
+            const qtrSum = [...document.querySelectorAll(".qtr")].reduce((x,y) => x + parseInt(y.value), 0);
+            const examSum = [...document.querySelectorAll(".exam")].reduce((x,y) => x + parseInt(y.value), 0);
             let total = (qtrSum * (9 / 40)) + (examSum * (1 / 10));
+            const qtr1 = document.getElementById("qtr1").value;
+            const qtr2 = document.getElementById("qtr2").value;
             const qtr3 = document.getElementById("qtr3").value;
             const qtr4 = document.getElementById("qtr4").value;
             if ((parseInt(qtr3) + parseInt(qtr4) === 0) || ((parseInt(qtr1) + parseInt(qtr2) === 0) && (parseInt(qtr3) === 0 || parseInt(qtr4) === 0))) total = 0;
             document.getElementById("grade").innerText = total >= 3.5 ? 'A' : total >= 2.5 ? 'B' : total >= 1.5 ? 'C' : total >= 0.75 ? 'D' : 'E';
         }
         const calcSem = () => {
-            const qtrSum = [...document.querySelectorAll(".qtrs")].reduce((x,y) => x += parseInt(y.value), 0);
-            const examSum = [...document.querySelectorAll(".exams")].reduce((x,y) => x += parseInt(y.value), 0);
+            const qtrSum = [...document.querySelectorAll(".qtrs")].reduce((x,y) => x + parseInt(y.value), 0);
+            const examSum = [...document.querySelectorAll(".exams")].reduce((x,y) => x + parseInt(y.value), 0);
             const total = qtrSum * (1 / 2);
             document.getElementById("grades").innerText = total >= 3.5 ? 'A' : total >= 2.5 ? 'B' : total >= 1.5 ? 'C' : total >= 0.75 ? 'D' : 'E';
+        }
+        const calcGPA = () => {
+            const count = document.getElementById("classcount").value;
+            const courseElements = [...document.querySelectorAll(".course")];
+            const rawSum = courseElements.reduce((x, y, i) => i <= parseInt(count) ? x + parseInt(y.value) : x, 0);
+            const typeValues = [...document.querySelectorAll(".type")].map(x => Number(x.value));
+            const weightedSum = courseElements.reduce((x, y, i) => i > parseInt(count) ? x : parseInt(y.value) > 1 ? x + parseInt(y.value) + typeValues[i] : x + parseInt(y.value));
+            document.getElementById("ungpa").innerText = (Math.round((rawSum / parseInt(count)) * 100) / 100).toString();
+            document.getElementById("wgpa").innerText = (Math.round((weightedSum / parseInt(count)) * 100) / 100).toString();
         }
     </script>
 
