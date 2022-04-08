@@ -193,43 +193,43 @@
                     <label for="type1">Course #1 Type</label>&nbsp;<select name="type1" id="type1" class="type" onchange="calcGPA()">
                         <option value="1">AP or G/T</option>
                         <option value="0.5">Honors</option>
-                        <option value="0" select>Regular</option>
+                        <option value="0" selected>Regular</option>
                     </select>
                     <br>
                     <label for="type2">Course #2 Type</label>&nbsp;<select name="type2" id="type2" class="type" onchange="calcGPA()">
                         <option value="1">AP or G/T</option>
                         <option value="0.5">Honors</option>
-                        <option value="0" select>Regular</option>
+                        <option value="0" selected>Regular</option>
                     </select>
                     <br>
                     <label for="type3">Course #3 Type</label>&nbsp;<select name="type3" id="type3" class="type" onchange="calcGPA()">
                         <option value="1">AP or G/T</option>
                         <option value="0.5">Honors</option>
-                        <option value="0" select>Regular</option>
+                        <option value="0" selected>Regular</option>
                     </select>
                     <br>
                     <label for="type4">Course #4 Type</label>&nbsp;<select name="type4" id="type4" class="type" onchange="calcGPA()">
                         <option value="1">AP or G/T</option>
                         <option value="0.5">Honors</option>
-                        <option value="0" select>Regular</option>
+                        <option value="0" selected>Regular</option>
                     </select>
                     <br>
                     <label for="type5">Course #5 Type</label>&nbsp;<select name="type5" id="type5" class="type" onchange="calcGPA()">
                         <option value="1">AP or G/T</option>
                         <option value="0.5">Honors</option>
-                        <option value="0" select>Regular</option>
+                        <option value="0" selected>Regular</option>
                     </select>
                     <br>
                     <label for="type6">Course #6 Type</label>&nbsp;<select name="type6" id="type6" class="type" onchange="calcGPA()">
                         <option value="1">AP or G/T</option>
                         <option value="0.5">Honors</option>
-                        <option value="0" select>Regular</option>
+                        <option value="0" selected>Regular</option>
                     </select>
                     <br>
                     <label for="type7">Course #7 Type</label>&nbsp;<select name="type7" id="type7" class="type" onchange="calcGPA()">
                         <option value="1">AP or G/T</option>
                         <option value="0.5">Honors</option>
-                        <option value="0" select>Regular</option>
+                        <option value="0" selected>Regular</option>
                     </select>
                 </p>
             </div>
@@ -276,7 +276,7 @@
             const courseElements = [...document.querySelectorAll(".course")];
             const rawSum = courseElements.reduce((x, y, i) => i <= parseInt(count) ? x + parseInt(y.value) : x, 0);
             const typeValues = [...document.querySelectorAll(".type")].map(x => Number(x.value));
-            const weightedSum = courseElements.reduce((x, y, i) => i > parseInt(count) ? x : parseInt(y.value) > 1 ? x + parseInt(y.value) + typeValues[i] : x + parseInt(y.value));
+            const weightedSum = courseElements.reduce((x, y, i) => i > parseInt(count) ? x : parseInt(y.value) > 1 ? x + parseInt(y.value) + typeValues[i] : x + parseInt(y.value), 0);
             document.getElementById("ungpa").innerText = (Math.round((rawSum / parseInt(count)) * 100) / 100).toString();
             document.getElementById("wgpa").innerText = (Math.round((weightedSum / parseInt(count)) * 100) / 100).toString();
         }
