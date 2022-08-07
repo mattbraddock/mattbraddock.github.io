@@ -20,8 +20,7 @@
 
     <!-- CSS
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/skeleton.css">
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
 
     <!-- Favicon
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -33,71 +32,84 @@
     <!-- Primary Page Layout
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <div class="container">
-        <div class="row">
-            <h2>Course Grade & GPA Calculators</h2>
-        </div>
-        <div class="row">
-            <p>Calculates grades based on the updated 2021-22 <a href="https://policy.hcpss.org/8000/8020/implementation/" target="_blank">policy 8020</a> for HCPSS.</p> 
-        </div>
-        <div class="row">
-            <div class="six columns">
-                <p>
-                    <h5>Full Year Courses</h5>
-                    <p>Each quarter grade is worth 22.5%.<br>The final is worth 10%.</p>
-                    <label for="qtr1">Quarter 1</label>&nbsp;<select name="qtr1" id="qtr1" class="qtr" onchange="calc()">
+        <h1 style="margin-top:2%;">HCPSS High School Grade Calculators</h1>
+        <p>
+            All grades calculated using <a href="https://policy.hcpss.org/8000/8020/implementation/" target="_blank">HCPSS Policy 8020</a>.
+        </p>
+        <details>
+            <summary role="button">Full Year Courses</summary>
+            <p>Each quarter grade is worth 22.5%.<br>The final is worth 10%.</p>
+            <div class="grid">
+                <div>
+                    <label for="qtr1">Quarter 1</label>
+                    <select name="qtr1" id="qtr1" class="qtr" onchange="calc()">
                         <option value="4">A</option>
                         <option value="3" selected>B</option>
                         <option value="2">C</option>
                         <option value="1">D</option>
                         <option value="0">E</option>
                     </select>
-                    <br>
-                    <label for="qtr2">Quarter 2</label>&nbsp;<select name="qtr2" id="qtr2" class="qtr" onchange="calc()">
+                </div>
+                <div>
+                    <label for="qtr2">Quarter 2</label>
+                    <select name="qtr2" id="qtr2" class="qtr" onchange="calc()">
                         <option value="4">A</option>
                         <option value="3" selected>B</option>
                         <option value="2">C</option>
                         <option value="1">D</option>
                         <option value="0">E</option>
                     </select>
-                    <br><!--
-                    <label for="mid">Midterm</label>&nbsp;<select name="mid" id="mid" class="exam" onchange="calc()">
+                </div>
+                <!--
+                <div>
+                    <label for="mid">Midterm</label>
+                    <select name="mid" id="mid" class="exam" onchange="calc()">
                         <option value="4">A</option>
                         <option value="3" selected>B</option>
                         <option value="2">C</option>
                         <option value="1">D</option>
                         <option value="0">E</option>
                     </select>
-                    <br>-->
-                    <label for="qtr3">Quarter 3</label>&nbsp;<select name="qtr3" id="qtr3" class="qtr" onchange="calc()">
+                </div>
+                -->
+                <div>
+                    <label for="qtr3">Quarter 3</label>
+                    <select name="qtr3" id="qtr3" class="qtr" onchange="calc()">
                         <option value="4">A</option>
                         <option value="3" selected>B</option>
                         <option value="2">C</option>
                         <option value="1">D</option>
                         <option value="0">E</option>
                     </select>
-                    <br>
-                    <label for="qtr4">Quarter 4</label>&nbsp;<select name="qtr4" id="qtr4" class="qtr" onchange="calc()">
+                </div>
+                <div>
+                    <label for="qtr4">Quarter 4</label>
+                    <select name="qtr4" id="qtr4" class="qtr" onchange="calc()">
                         <option value="4">A</option>
                         <option value="3" selected>B</option>
                         <option value="2">C</option>
                         <option value="1">D</option>
                         <option value="0">E</option>
                     </select>
-                    <br>
-                    <label for="fin">Final</label>&nbsp;<select name="fin" id="fin" class="exam" onchange="calc()">
+                </div>
+                <div>
+                    <label for="fin">Final</label>
+                    <select name="fin" id="fin" class="exam" onchange="calc()">
                         <option value="4">A</option>
                         <option value="3" selected>B</option>
                         <option value="2">C</option>
                         <option value="1">D</option>
                         <option value="0">E</option>
                     </select>
-                </p>
-                <p><strong>Course grade: <span id="grade">B</span></strong></p>
+                </div>
             </div>
-            <div class="six columns">
-                <p>
-                    <h5>Semester Courses</h5>
-                    <p>Each quarter grade is worth 50%.</p>
+            <p><strong>Course grade: <span id="grade">B</span></strong></p>
+        </details>
+        <details>
+            <summary role="button">Semester Courses</summary>
+            <p>Each quarter grade is worth 50%.</p>
+            <div class="grid">
+                <div>
                     <label for="qtr1s">Quarter 1</label>&nbsp;<select name="qtr1s" id="qtr1s" class="qtrs" onchange="calcSem()">
                         <option value="4">A</option>
                         <option value="3" selected>B</option>
@@ -105,34 +117,45 @@
                         <option value="1">D</option>
                         <option value="0">E</option>
                     </select>
-                    <br>
+                </div>
+                <div>
                     <label for="qtr2s">Quarter 2</label>&nbsp;<select name="qtr2s" id="qtr2s" class="qtrs" onchange="calcSem()">
                         <option value="4">A</option>
                         <option value="3" selected>B</option>
                         <option value="2">C</option>
                         <option value="1">D</option>
                         <option value="0">E</option>
-                    </select><!--
-                    <br>
+                    </select>
+                </div>
+                <!--
+                <div>
                     <label for="fins">Final</label>&nbsp;<select name="fins" id="fins" class="exams" onchange="calcSem()">
                         <option value="4">A</option>
                         <option value="3" selected>B</option>
                         <option value="2">C</option>
                         <option value="1">D</option>
                         <option value="0">E</option>
-                    </select>-->
-                </p>
-                <p><strong>Course grade: <span id="grades">B</span></strong></p>
+                    </select>
+                </div>
+                -->
             </div>
-        </div>
-        <hr>
-        <div class="row">
-            <h5>Grade Point Average</h5>
-        </div>
-        <div class="row">
-            <div class="four columns">
-                <p>
-                    <label for="course1">Course #1 Grade</label>&nbsp;<select name="course1" id="course1" class="course" onchange="calcGPA()">
+            <p><strong>Course grade: <span id="grades">B</span></strong></p>
+        </details>
+        <details>
+            <summary role="button">Grade Point Average</summary>
+            <label for="classcount">Number of Classes</label>&nbsp;<select name="classcount" id="classcount" onchange="calcGPA()">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7" selected>7</option>
+            </select>
+            <div class="grid">
+                <div>
+                    <label for="course1">Course #1 Grade</label>
+                    <select name="course1" id="course1" class="course" onchange="calcGPA()">
                         <option value="4">A</option>
                         <option value="3" selected>B</option>
                         <option value="2">C</option>
@@ -140,7 +163,16 @@
                         <option value="0">E</option>
                     </select>
                     <br>
-                    <label for="course2">Course #2 Grade</label>&nbsp;<select name="course2" id="course2" class="course" onchange="calcGPA()">
+                    <label for="type1">Course #1 Type</label>
+                    <select name="type1" id="type1" class="type" onchange="calcGPA()">
+                        <option value="1">AP or G/T</option>
+                        <option value="0.5">Honors</option>
+                        <option value="0" selected>Regular</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="course2">Course #2 Grade</label>
+                    <select name="course2" id="course2" class="course" onchange="calcGPA()">
                         <option value="4">A</option>
                         <option value="3" selected>B</option>
                         <option value="2">C</option>
@@ -148,7 +180,16 @@
                         <option value="0">E</option>
                     </select>
                     <br>
-                    <label for="course3">Course #3 Grade</label>&nbsp;<select name="course3" id="course3" class="course" onchange="calcGPA()">
+                    <label for="type2">Course #2 Type</label>
+                    <select name="type2" id="type2" class="type" onchange="calcGPA()">
+                        <option value="1">AP or G/T</option>
+                        <option value="0.5">Honors</option>
+                        <option value="0" selected>Regular</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="course3">Course #3 Grade</label>
+                    <select name="course3" id="course3" class="course" onchange="calcGPA()">
                         <option value="4">A</option>
                         <option value="3" selected>B</option>
                         <option value="2">C</option>
@@ -156,7 +197,16 @@
                         <option value="0">E</option>
                     </select>
                     <br>
-                    <label for="course4">Course #4 Grade</label>&nbsp;<select name="course4" id="course4" class="course" onchange="calcGPA()">
+                    <label for="type3">Course #3 Type</label>
+                    <select name="type3" id="type3" class="type" onchange="calcGPA()">
+                        <option value="1">AP or G/T</option>
+                        <option value="0.5">Honors</option>
+                        <option value="0" selected>Regular</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="course4">Course #4 Grade</label>
+                    <select name="course4" id="course4" class="course" onchange="calcGPA()">
                         <option value="4">A</option>
                         <option value="3" selected>B</option>
                         <option value="2">C</option>
@@ -164,7 +214,16 @@
                         <option value="0">E</option>
                     </select>
                     <br>
-                    <label for="course5">Course #5 Grade</label>&nbsp;<select name="course5" id="course5" class="course" onchange="calcGPA()">
+                    <label for="type4">Course #4 Type</label>
+                    <select name="type4" id="type4" class="type" onchange="calcGPA()">
+                        <option value="1">AP or G/T</option>
+                        <option value="0.5">Honors</option>
+                        <option value="0" selected>Regular</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="course5">Course #5 Grade</label>
+                    <select name="course5" id="course5" class="course" onchange="calcGPA()">
                         <option value="4">A</option>
                         <option value="3" selected>B</option>
                         <option value="2">C</option>
@@ -172,7 +231,16 @@
                         <option value="0">E</option>
                     </select>
                     <br>
-                    <label for="course6">Course #6 Grade</label>&nbsp;<select name="course6" id="course6" class="course" onchange="calcGPA()">
+                    <label for="type5">Course #5 Type</label>
+                    <select name="type5" id="type5" class="type" onchange="calcGPA()">
+                        <option value="1">AP or G/T</option>
+                        <option value="0.5">Honors</option>
+                        <option value="0" selected>Regular</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="course6">Course #6 Grade</label>
+                    <select name="course6" id="course6" class="course" onchange="calcGPA()">
                         <option value="4">A</option>
                         <option value="3" selected>B</option>
                         <option value="2">C</option>
@@ -180,76 +248,34 @@
                         <option value="0">E</option>
                     </select>
                     <br>
-                    <label for="course7">Course #7 Grade</label>&nbsp;<select name="course7" id="course7" class="course" onchange="calcGPA()">
+                    <label for="type6">Course #6 Type</label>
+                    <select name="type6" id="type6" class="type" onchange="calcGPA()">
+                        <option value="1">AP or G/T</option>
+                        <option value="0.5">Honors</option>
+                        <option value="0" selected>Regular</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="course7">Course #7 Grade</label>
+                    <select name="course7" id="course7" class="course" onchange="calcGPA()">
                         <option value="4">A</option>
                         <option value="3" selected>B</option>
                         <option value="2">C</option>
                         <option value="1">D</option>
                         <option value="0">E</option>
                     </select>
-                </p>
+                    <br>
+                    <label for="type7">Course #7 Type</label>
+                    <select name="type7" id="type7" class="type" onchange="calcGPA()">
+                        <option value="1">AP or G/T</option>
+                        <option value="0.5">Honors</option>
+                        <option value="0" selected>Regular</option>
+                    </select>
+                </div>
             </div>
-            <div class="four columns">
-                <p>
-                    <label for="type1">Course #1 Type</label>&nbsp;<select name="type1" id="type1" class="type" onchange="calcGPA()">
-                        <option value="1">AP or G/T</option>
-                        <option value="0.5">Honors</option>
-                        <option value="0" selected>Regular</option>
-                    </select>
-                    <br>
-                    <label for="type2">Course #2 Type</label>&nbsp;<select name="type2" id="type2" class="type" onchange="calcGPA()">
-                        <option value="1">AP or G/T</option>
-                        <option value="0.5">Honors</option>
-                        <option value="0" selected>Regular</option>
-                    </select>
-                    <br>
-                    <label for="type3">Course #3 Type</label>&nbsp;<select name="type3" id="type3" class="type" onchange="calcGPA()">
-                        <option value="1">AP or G/T</option>
-                        <option value="0.5">Honors</option>
-                        <option value="0" selected>Regular</option>
-                    </select>
-                    <br>
-                    <label for="type4">Course #4 Type</label>&nbsp;<select name="type4" id="type4" class="type" onchange="calcGPA()">
-                        <option value="1">AP or G/T</option>
-                        <option value="0.5">Honors</option>
-                        <option value="0" selected>Regular</option>
-                    </select>
-                    <br>
-                    <label for="type5">Course #5 Type</label>&nbsp;<select name="type5" id="type5" class="type" onchange="calcGPA()">
-                        <option value="1">AP or G/T</option>
-                        <option value="0.5">Honors</option>
-                        <option value="0" selected>Regular</option>
-                    </select>
-                    <br>
-                    <label for="type6">Course #6 Type</label>&nbsp;<select name="type6" id="type6" class="type" onchange="calcGPA()">
-                        <option value="1">AP or G/T</option>
-                        <option value="0.5">Honors</option>
-                        <option value="0" selected>Regular</option>
-                    </select>
-                    <br>
-                    <label for="type7">Course #7 Type</label>&nbsp;<select name="type7" id="type7" class="type" onchange="calcGPA()">
-                        <option value="1">AP or G/T</option>
-                        <option value="0.5">Honors</option>
-                        <option value="0" selected>Regular</option>
-                    </select>
-                </p>
-            </div>
-            <div class="four columns">
-                <p>
-                    <label for="classcount">Number of Classes</label>&nbsp;<select name="classcount" id="classcount" onchange="calcGPA()">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7" selected>7</option>
-                    </select>
-                </p>
-                <p><strong>Unweighted GPA: <span id="ungpa">3.00</span></strong></p>
-                <p><strong>Weighted GPA: <span id="wgpa">3.00</span></strong></p>
-            </div>
-        </div>
+            <p><strong>Unweighted GPA: <span id="ungpa">3.00</span></strong></p>
+            <p><strong>Weighted GPA: <span id="wgpa">3.00</span></strong></p>
+        </details>
     </div>
 
     <!-- JAVASCRIPT
@@ -278,8 +304,8 @@
             const rawSum = courseElements.reduce((x, y, i) => i <= parseInt(count) ? x + parseInt(y.value) : x, 0);
             const typeValues = [...document.querySelectorAll(".type")].map(x => Number(x.value));
             const weightedSum = courseElements.reduce((x, y, i) => i > parseInt(count) ? x : parseInt(y.value) > 1 ? x + parseInt(y.value) + typeValues[i] : x + parseInt(y.value), 0);
-            document.getElementById("ungpa").innerText = (Math.round((rawSum / parseInt(count)) * 100) / 100).toString();
-            document.getElementById("wgpa").innerText = (Math.round((weightedSum / parseInt(count)) * 100) / 100).toString();
+            document.getElementById("ungpa").innerText = (rawSum / parseInt(count)).toFixed(2).toString();
+            document.getElementById("wgpa").innerText = (weightedSum / parseInt(count)).toFixed(2).toString();
         }
     </script>
 
