@@ -291,7 +291,7 @@
         const calcSem = () => {
             const qtrSum = [...document.querySelectorAll(".qtrs")].reduce((x,y) => x + parseInt(y.value), 0);
             const examSum = [...document.querySelectorAll(".exams")].reduce((x,y) => x + parseInt(y.value), 0);
-            const total = (qtrSum * (1 / 5)) + (examSum * (1 / 10));
+            const total = (qtrSum * (2 / 5)) + (examSum * (1 / 5));
             document.getElementById("grades").innerText = total >= 3.5 ? 'A' : total >= 2.5 ? 'B' : total >= 1.5 ? 'C' : total >= 0.75 ? 'D' : 'E';
         }
         const calcGPA = () => {
