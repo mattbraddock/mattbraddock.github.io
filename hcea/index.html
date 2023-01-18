@@ -33,9 +33,8 @@
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <div class="container">
         <h1 style="margin-top:2%;">HCEA-Related Resources</h1>
-        <p>
-            All contracts and salary scales are available on <a href="https://www.hceanea.org/who-we-are/contract-and-salary-proposals/" target="_blank">hceanea.org</a>
-        </p>
+        <p>All contracts and salary scales are available on <a href="https://www.hceanea.org/who-we-are/contract-and-salary-proposals/" target="_blank">hceanea.org</a></p>
+        <p>If there is a conflict between the contract language and your lived experience, reach out to a building representative.</p>
         <details>
             <summary role="button">Certified Hourly Rate Calculator</summary>
             <p>"HCPSS personnel employed for summer school shall be paid an hourly rate, which is based on their current salary."</p>
@@ -58,6 +57,22 @@
                 </div>
             </div>
         </details>
+        <details>
+            <summary role="button">Secondary Teacher Planning Time Checklist</summary>
+            <p>"Teachers shall have a 30-minute, duty-free lunch period."</p>
+            <p>"In addition to their lunch period, secondary school teachers will have daily preparation time of at least fifty (50) consecutive minutes during the regular student day four days a week and at least forty (40) consecutive minutes on the regular student day of the week with shortened class periods. In addition, they will have another ninety (90) minutes during the week, in which they will not be assigned to any other duties. No portion of the additional 90 minutes will be in blocks of less than 25 minutes."</p>
+            <p>General guidelines:</p>
+            <div style="margin-left: 5%; margin-bottom: 2em;">
+                <input type="checkbox" />Do you get at least 50 consecutive minutes of duty-free time during the 4 regular school days?
+                <br/>
+                <input type="checkbox" />Do you get at least 40 consecutive minutes of duty-free time during the school day with flex time?
+                <br/>
+                <input type="checkbox" />Do you get at least 30 consecutive minutes of duty-free time between the end of the school day and end of the duty day at least 3 days a week?*
+                <br/>
+                <input type="checkbox" />Do you get a 30 minute duty-free lunch every school day?
+            </div>
+            <p>*There are multiple ways to meet the additional 90 minutes of duty-free work time throughout the week.</p>
+        </details>
     </div>
 
     <!-- JAVASCRIPT
@@ -66,7 +81,7 @@
         function rateCalc() {
             const salary = parseInt(document.getElementById('hrc-salary').value);
             const days = parseInt(document.getElementById('hrc-type').value);
-            document.getElementById('hrc-rate').value = (Math.round(salary / (days * 7) * 100) / 100).toFixed(2);
+            document.getElementById('hrc-rate').value = (salary / (days * 7)).toFixed(2);
         }
     </script>
 
