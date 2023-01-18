@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Basic Page Needs
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta charset="utf-8">
+    <title>HCEA-Related Resources</title>
+    <meta name="description" content="Various resources related to the HCEA contract">
+    <meta name="author" content="Matt Braddock">
+
+    <!-- Mobile Specific Metas
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- FONT
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@600&display=swap" rel="stylesheet">
+
+    <!-- CSS
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+
+    <!-- Favicon
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+
+</head>
+<body>
+
+    <!-- Primary Page Layout
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <div class="container">
+        <h1 style="margin-top:2%;">HCEA-Related Resources</h1>
+        <p>
+            All contracts and salary scales are available on <a href="https://www.hceanea.org/who-we-are/contract-and-salary-proposals/" target="_blank">hceanea.org</a>
+        </p>
+        <details>
+            <summary role="button">Certified Hourly Rate Calculator</summary>
+            <p>"HCPSS personnel employed for summer school shall be paid an hourly rate, which is based on their current salary."</p>
+            <div class="grid">
+                <div>
+                    <label for="hrc-type">Scale</label>
+                    <select name="hrc-type" id="hrc-type" onchange="rateCalc()">
+                        <option value="195" selected>10-Month Teacher</option>
+                        <option value="197">10-Month SpEd Teacher</option>
+                        <option value="215">11-Month Teacher</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="hrc-salary">Salary</label>
+                    <input name="hrc-salary" id="hrc-salary" type="text" value="60000" onkeyup="rateCalc()" />
+                </div>
+                <div>
+                    <label for="hrc-rate">Hourly Rate</label>
+                    <input name="hrc-rate" id="hrc-rate" type="text" value="43.96" readonly />
+                </div>
+            </div>
+        </details>
+    </div>
+
+    <!-- JAVASCRIPT
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <script>
+        function rateCalc() {
+            const salary = parseInt(document.getElementById('hrc-salary').value);
+            const days = parseInt(document.getElementById('hrc-type').value);
+            document.getElementById('hrc-rate').value = (Math.round(salary / (days * 7) * 100) / 100).toFixed(2);
+        }
+    </script>
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>
