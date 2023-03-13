@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Equation Previewer</title>
+  <meta name="description" content="Easily preview LaTeX equations">
+  <meta name="author" content="Matt Braddock">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@600&display=swap" rel="stylesheet">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="../css/normalize.css">
+  <link rel="stylesheet" href="../css/skeleton.css">
+  <style>
+      .container {
+        max-width: 1200px;
+        margin: auto;
+        margin-top: 5%;
+      }
+      .row {
+        text-align: center;
+      }
+      textarea {
+        font-size: 60px;
+        height: 5em;
+        width: 100%;
+      }
+      #load {
+        margin-bottom: 4em;
+      }
+  </style>
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="../images/favicon.png">
+
+</head>
+<body>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+    <div class="row">
+        <textarea id="input" spellcheck="false"></textarea>
+    </div>
+    <div class="row">
+        <button id="load">Load Image</button>
+    </div>
+    <div class="row">
+        <img id="eq" src="data:," alt>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <script>
+        document.getElementById('load').addEventListener('click', gen);
+        function gen() {
+            console.log('works');
+            const url = `https://latex.codecogs.com/png.image?${encodeURIComponent(String.raw`\huge&space;\dpi{300}`.concat(document.getElementById('input').value))}`;
+            document.getElementById('eq').src = url;
+        }
+    </script>
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>
