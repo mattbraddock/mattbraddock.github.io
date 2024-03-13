@@ -104,6 +104,68 @@
             <p><strong>Course grade: <span id="grade">B</span></strong></p>
         </details>
         <details>
+            <summary role="button">State-Assessed Courses</summary>
+            <p>Courses:</p>
+            <ul>
+                <li>Biology G/T</li>
+                <li>Biology, American Government, American Government Honors (beginning SY 2024-25)</li>
+            </ul>
+            <p>Each quarter grade plus the state assessment is worth 20%.</p>
+            <div class="grid">
+                <div>
+                    <label for="qtr1a">Quarter 1</label>
+                    <select name="qtr1a" id="qtr1a" class="qtra" onchange="calcAssess()">
+                        <option value="4">A</option>
+                        <option value="3" selected>B</option>
+                        <option value="2">C</option>
+                        <option value="1">D</option>
+                        <option value="0">E</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="qtr2a">Quarter 2</label>
+                    <select name="qtr2a" id="qtr2a" class="qtra" onchange="calcAssess()">
+                        <option value="4">A</option>
+                        <option value="3" selected>B</option>
+                        <option value="2">C</option>
+                        <option value="1">D</option>
+                        <option value="0">E</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="qtr3a">Quarter 3</label>
+                    <select name="qtr3a" id="qtr3a" class="qtra" onchange="calcAssess()">
+                        <option value="4">A</option>
+                        <option value="3" selected>B</option>
+                        <option value="2">C</option>
+                        <option value="1">D</option>
+                        <option value="0">E</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="qtr4a">Quarter 4</label>
+                    <select name="qtr4a" id="qtr4a" class="qtra" onchange="calcAssess()">
+                        <option value="4">A</option>
+                        <option value="3" selected>B</option>
+                        <option value="2">C</option>
+                        <option value="1">D</option>
+                        <option value="0">E</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="assess">State Assessment</label>
+                    <select name="assess" id="assess" class="qtra" onchange="calcAssess()">
+                        <option value="4">A</option>
+                        <option value="3" selected>B</option>
+                        <option value="2">C</option>
+                        <option value="1">D</option>
+                        <option value="0">E</option>
+                    </select>
+                </div>
+            </div>
+            <p><strong>Course grade: <span id="gradea">B</span></strong></p>
+        </details>
+        <details>
             <summary role="button">Semester Courses</summary>
             <p>Each quarter grade is worth 40%. The final exam is worth 20%.</p>
             <div class="grid">
@@ -287,6 +349,16 @@
             const qtr4 = document.getElementById("qtr4").value;
             if ((parseInt(qtr3) + parseInt(qtr4) === 0) || ((parseInt(qtr1) + parseInt(qtr2) === 0) && (parseInt(qtr3) === 0 || parseInt(qtr4) === 0))) total = 0;
             document.getElementById("grade").innerText = total >= 3.5 ? 'A' : total >= 2.5 ? 'B' : total >= 1.5 ? 'C' : total >= 0.75 ? 'D' : 'E';
+        }
+        const calcAssess = () => {
+            const qtrSum = [...document.querySelectorAll(".qtra")].reduce((x,y) => x + parseInt(y.value), 0);
+            let total = qtrSum * (1 / 5);
+            const qtr1 = document.getElementById("qtr1a").value;
+            const qtr2 = document.getElementById("qtr2a").value;
+            const qtr3 = document.getElementById("qtr3a").value;
+            const qtr4 = document.getElementById("qtr4a").value;
+            if ((parseInt(qtr3) + parseInt(qtr4) === 0) || ((parseInt(qtr1) + parseInt(qtr2) === 0) && (parseInt(qtr3) === 0 || parseInt(qtr4) === 0))) total = 0;
+            document.getElementById("gradea").innerText = total >= 3.5 ? 'A' : total >= 2.5 ? 'B' : total >= 1.5 ? 'C' : total >= 0.75 ? 'D' : 'E';
         }
         const calcSem = () => {
             const qtrSum = [...document.querySelectorAll(".qtrs")].reduce((x,y) => x + parseInt(y.value), 0);
