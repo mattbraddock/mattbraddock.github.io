@@ -369,9 +369,9 @@
         const calcGPA = () => {
             const count = document.getElementById("classcount").value;
             const courseElements = [...document.querySelectorAll(".course")];
-            const rawSum = courseElements.reduce((x, y, i) => i <= parseInt(count) ? x + parseInt(y.value) : x, 0);
+            const rawSum = courseElements.reduce((x, y, i) => i < parseInt(count) ? x + parseInt(y.value) : x, 0);
             const typeValues = [...document.querySelectorAll(".type")].map(x => Number(x.value));
-            const weightedSum = courseElements.reduce((x, y, i) => i > parseInt(count) ? x : parseInt(y.value) > 1 ? x + parseInt(y.value) + typeValues[i] : x + parseInt(y.value), 0);
+            const weightedSum = courseElements.reduce((x, y, i) => i >= parseInt(count) ? x : parseInt(y.value) > 1 ? x + parseInt(y.value) + typeValues[i] : x + parseInt(y.value), 0);
             document.getElementById("ungpa").innerText = (rawSum / parseInt(count)).toFixed(2).toString();
             document.getElementById("wgpa").innerText = (weightedSum / parseInt(count)).toFixed(2).toString();
         }
