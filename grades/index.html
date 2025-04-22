@@ -21,6 +21,16 @@
     <!-- CSS
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+    <style>
+        th {
+            font-weight: bold;
+            text-align: center;
+            vertical-align: middle;
+        }
+        td {
+            text-align: center;
+        }
+    </style>
 
     <!-- Favicon
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -36,6 +46,108 @@
         <p>
             All grades calculated using <a href="https://policy.hcpss.org/8000/8020/implementation/" target="_blank">HCPSS Policy 8020</a>.
         </p>
+        <details>
+            <summary role="button" class="secondary">NEW: End of Year Projector</summary>
+            <div class="grid">
+                <div>
+                    <label for="qtr1p">Quarter 1</label>
+                    <select name="qtr1p" id="qtr1p" class="qtrp" onchange="calcProject()">
+                        <option value="4">A</option>
+                        <option value="3" selected>B</option>
+                        <option value="2">C</option>
+                        <option value="1">D</option>
+                        <option value="0">E</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="qtr2p">Quarter 2</label>
+                    <select name="qtr2p" id="qtr2p" class="qtrp" onchange="calcProject()">
+                        <option value="4">A</option>
+                        <option value="3" selected>B</option>
+                        <option value="2">C</option>
+                        <option value="1">D</option>
+                        <option value="0">E</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="midp">Midterm</label>
+                    <select name="midp" id="midp" class="midp" onchange="calcProject()">
+                        <option value="4">A</option>
+                        <option value="3" selected>B</option>
+                        <option value="2">C</option>
+                        <option value="1">D</option>
+                        <option value="0">E</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="qtr3p">Quarter 3</label>
+                    <select name="qtr3p" id="qtr3p" class="qtrp" onchange="calcProject()">
+                        <option value="4">A</option>
+                        <option value="3" selected>B</option>
+                        <option value="2">C</option>
+                        <option value="1">D</option>
+                        <option value="0">E</option>
+                    </select>
+                </div>
+            </div>
+            <table>
+                <tbody>
+                    <tr>
+                        <th></th>
+                        <th colspan="6">Quarter 4 Grade</th>
+                    </tr>
+                    <tr>
+                        <th rowspan="6" style="writing-mode: sideways-lr;" width="10%">Final Exam Grade</th>
+                        <th width="5%"></th>
+                        <th width="17%">A</th>
+                        <th width="17%">B</th>
+                        <th width="17%">C</th>
+                        <th width="17%">D</th>
+                        <th width="17%">E</th>
+                    </tr>
+                    <tr>
+                        <th>A</th>
+                        <td class="p12"></td>
+                        <td class="p10"></td>
+                        <td class="p8"></td>
+                        <td class="p6"></td>
+                        <td class="p4"></td>
+                    </tr>
+                    <tr>
+                        <th>B</th>
+                        <td class="p11"></td>
+                        <td class="p9"></td>
+                        <td class="p7"></td>
+                        <td class="p5"></td>
+                        <td class="p3"></td>
+                    </tr>
+                    <tr>
+                        <th>C</th>
+                        <td class="p10"></td>
+                        <td class="p8"></td>
+                        <td class="p6"></td>
+                        <td class="p4"></td>
+                        <td class="p2"></td>
+                    </tr>
+                    <tr>
+                        <th>D</th>
+                        <td class="p9"></td>
+                        <td class="p7"></td>
+                        <td class="p5"></td>
+                        <td class="p3"></td>
+                        <td class="p1"></td>
+                    </tr>
+                    <tr>
+                        <th>E</th>
+                        <td class="p8"></td>
+                        <td class="p6"></td>
+                        <td class="p4"></td>
+                        <td class="p2"></td>
+                        <td class="p0"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </details>
         <details>
             <summary role="button">Full Year Courses</summary>
             <p>Each quarter grade is worth 20%.<br>The midterm and final exams are worth 10% each.</p>
@@ -375,6 +487,21 @@
             document.getElementById("ungpa").innerText = (rawSum / parseInt(count)).toFixed(2).toString();
             document.getElementById("wgpa").innerText = (weightedSum / parseInt(count)).toFixed(2).toString();
         }
+        const calcProject = () => {
+            const qtrSum = [...document.querySelectorAll(".qtrp")].reduce((x,y) => x + 2 * parseInt(y.value), 0);
+            let total = qtrSum + parseInt(document.querySelector(".midp").value);
+            for (let i = 0; i < 13; i++) {
+                const grade = (total + i) / 10;
+                [...document.querySelectorAll(`.p${i}`)].forEach(el => el.innerText = grade >= 3.5 ? 'A' : grade >= 2.5 ? 'B' : grade >= 1.5 ? 'C' : grade >= 0.75 ? 'D' : 'E');
+            }
+        }
+        document.addEventListener("DOMContentLoaded", () => {
+            calc();
+            calcAssess();
+            calcSem();
+            calcGPA();
+            calcProject();
+        });
     </script>
 
 <!-- End Document
