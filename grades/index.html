@@ -112,7 +112,7 @@
                         <td class="p10"></td>
                         <td class="p8"></td>
                         <td class="p6"></td>
-                        <td class="p4"></td>
+                        <td class="p4 q4e"></td>
                     </tr>
                     <tr>
                         <th data-theme="light">B</th>
@@ -120,7 +120,7 @@
                         <td class="p9"></td>
                         <td class="p7"></td>
                         <td class="p5"></td>
-                        <td class="p3"></td>
+                        <td class="p3 q4e"></td>
                     </tr>
                     <tr>
                         <th data-theme="light">C</th>
@@ -128,7 +128,7 @@
                         <td class="p8"></td>
                         <td class="p6"></td>
                         <td class="p4"></td>
-                        <td class="p2"></td>
+                        <td class="p2 q4e"></td>
                     </tr>
                     <tr>
                         <th data-theme="light">D</th>
@@ -136,7 +136,7 @@
                         <td class="p7"></td>
                         <td class="p5"></td>
                         <td class="p3"></td>
-                        <td class="p1"></td>
+                        <td class="p1 q4e"></td>
                     </tr>
                     <tr>
                         <th data-theme="light">E</th>
@@ -144,7 +144,7 @@
                         <td class="p6"></td>
                         <td class="p4"></td>
                         <td class="p2"></td>
-                        <td class="p0"></td>
+                        <td class="p0 q4e"></td>
                     </tr>
                 </tbody>
             </table>
@@ -494,6 +494,14 @@
             for (let i = 0; i < 13; i++) {
                 const grade = (total + i) / 10;
                 [...document.querySelectorAll(`.p${i}`)].forEach(el => el.innerText = grade >= 3.5 ? 'A' : grade >= 2.5 ? 'B' : grade >= 1.5 ? 'C' : grade >= 0.75 ? 'D' : 'E');
+            }
+            const qtr1 = document.getElementById("qtr1p").value;
+            const qtr2 = document.getElementById("qtr2p").value;
+            const qtr3 = document.getElementById("qtr3p").value;
+            if (parseInt(qtr1) === 0 && parseInt(qtr2) === 0 && parseInt(qtr3) === 0) {
+                [...document.querySelectorAll('[class^=p]')].forEach(el => el.innerText = 'E');
+            } else if ((parseInt(qtr1) === 0 && parseInt(qtr2) === 0) || parseInt(qtr3) === 0) {
+                [...document.querySelectorAll('.q4e')].forEach(el => el.innerText = 'E');
             }
         }
         document.addEventListener("DOMContentLoaded", () => {
