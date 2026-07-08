@@ -20,6 +20,11 @@
     <!-- CSS
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <link rel="stylesheet" href="../css/skeleton.css">
+    <style>
+        h2 {
+            margin-top: 1em;
+        }
+    </style>
 
     <!-- Favicon
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -32,55 +37,87 @@
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <div class="container">
         <h1>HCEA Information</h1>
-        <h2>Contracts</h2>
-        <p>Historical contracts were obtained via <a href="https://mpia.hcpss.org/requests/2024-140" target="_blank">HCPSS MPIA Request #2024-140</a> and <a href="https://mpia.hcpss.org/requests/2026-212" target="_blank">HCPSS MPIA Request #2026-212</a>.</p>
-        <ul>
-            <li><a href="./hcea-25-28.pdf">2025-2028</a></li>
-            <li><a href="./hcea-24-27.pdf">2024-2027</a></li>
-            <li><a href="./hcea-23-24.pdf">2023-2024</a></li>
-            <li><a href="./hcea-22-23.pdf">2022-2023</a></li>
-            <li><a href="./hcea-21-22.pdf">2021-2022</a></li>
-            <li><a href="./hcea-19-21-rev2020.pdf">2019-2021 (revised: 2020)</a></li>
-            <li><a href="./hcea-19-21.pdf">2019-2021</a></li>
-            <li><a href="./hcea-18-20.pdf">2018-2020</a></li>
-            <li><a href="./hcea-16-18.pdf">2016-2018</a></li>
-            <li><a href="./hcea-15-17.pdf">2015-2017</a></li>
-            <li><a href="./hcea-14-15.pdf">2014-2015</a></li>
-            <li><a href="./hcea-13-14.pdf">2013-2014</a></li>
-            <li><a href="./hcea-10-13-rev2012.pdf">2010-2013 (revised: 2012)</a></li>
-            <li><a href="./hcea-10-13-rev2011.pdf">2010-2013 (revised: 2011)</a></li>
-            <li><a href="./hcea-10-13.pdf">2010-2013</a></li>
-            <li><a href="./hcea-09-10.pdf">2009-2010</a></li>
-            <li><a href="./hcea-07-10.pdf">2007-2010</a></li>
-            <li><a href="./hcea-05-07.pdf">2005-2007</a></li>
-            <li><a href="./hcea-02-05.PDF">2002-2005</a></li>
-            <li><a href="./hcea-00-02.PDF">2000-2002</a></li>
-            <li><a href="./hcea-99-00.PDF">1999-2000</a></li>
-            <li><a href="./hcea-98-99.PDF">1998-1999</a></li>
-            <li><a href="./hcea-97-98.PDF">1997-1998</a></li>
-            <li><a href="./hcea-96-97.PDF">1996-1997</a></li>
-            <li><a href="./hcea-95-96.PDF">1995-1996</a></li>
-            <li><a href="./hcea-94-95.PDF">1994-1995</a></li>
-            <li><a href="./hcea-93-94.PDF">1993-1994</a></li>
-            <li><a href="./hcea-90-93.PDF">1990-1993</a></li>
-            <li><a href="./hcea-87-90.PDF">1987-1990</a></li>
-            <li><a href="./hcea-86-87.PDF">1986-1987</a></li>
-            <li><a href="./hcea-85-86.PDF">1985-1986</a></li>
-            <li><a href="./hcea-84-86.PDF">1984-1986</a></li>
-            <li><a href="./hcea-83-84.PDF">1983-1984</a></li>
-            <li><a href="./hcea-81-83.PDF">1981-1983</a></li>
-            <li><a href="./hcea-79-81.PDF">1979-1981</a></li>
-            <li><a href="./hcea-78-80.PDF">1978-1980</a></li>
-            <li><a href="./hcea-77-78.PDF">1977-1978</a></li>
-            <li><a href="./hcea-76-77.PDF">1976-1977</a></li>
-            <li><a href="./hcea-75-76.PDF">1975-1976</a></li>
-            <li><a href="./hcea-73-75.pdf">1973-1975</a></li>
-            <li><a href="./hcea-72-73.pdf">1972-1973</a></li>
-            <li><a href="./hcea-71-72.pdf">1971-1972</a></li>
-            <li><a href="./hcea-70-71.pdf">1970-1971</a></li>
-            <li><a href="./hcea-69-70.pdf">1969-1970</a></li>
-        </ul>
+        <h2>Hourly Rate Calculator</h2>
+        <div class="row">
+        <div class="six columns">
+            <label for="hrc-type">Scale</label>
+            <select name="hrc-type" id="hrc-type" onchange="rateCalc()">
+                <option value="195" selected>10-Month Teacher</option>
+                <option value="197">10-Month SpEd Teacher</option>
+                <option value="215">11-Month Teacher</option>
+            </select>
+        </div>
+        <div class="six columns">
+            <label for="hrc-salary">Salary</label>
+            <input name="hrc-salary" id="hrc-salary" type="text" value="60000" onkeyup="rateCalc()" />
+            <label for="hrc-rate">Hourly Rate</label>
+            <input name="hrc-rate" id="hrc-rate" type="text" value="43.96" readonly />
+        </div>
+        </div>
+        <div>
+            <h2>Contracts</h2>
+            <p>Historical contracts were obtained via <a href="https://mpia.hcpss.org/requests/2024-140" target="_blank">HCPSS MPIA Request #2024-140</a> and <a href="https://mpia.hcpss.org/requests/2026-212" target="_blank">HCPSS MPIA Request #2026-212</a>.</p>
+            <ul>
+                <li><a href="./hcea-25-28.pdf">2025-2028</a></li>
+                <li><a href="./hcea-24-27.pdf">2024-2027</a></li>
+                <li><a href="./hcea-23-24.pdf">2023-2024</a></li>
+                <li><a href="./hcea-22-23.pdf">2022-2023</a></li>
+                <li><a href="./hcea-21-22.pdf">2021-2022</a></li>
+                <li><a href="./hcea-19-21-rev2020.pdf">2019-2021 (revised: 2020)</a></li>
+                <li><a href="./hcea-19-21.pdf">2019-2021</a></li>
+                <li><a href="./hcea-18-20.pdf">2018-2020</a></li>
+                <li><a href="./hcea-16-18.pdf">2016-2018</a></li>
+                <li><a href="./hcea-15-17.pdf">2015-2017</a></li>
+                <li><a href="./hcea-14-15.pdf">2014-2015</a></li>
+                <li><a href="./hcea-13-14.pdf">2013-2014</a></li>
+                <li><a href="./hcea-10-13-rev2012.pdf">2010-2013 (revised: 2012)</a></li>
+                <li><a href="./hcea-10-13-rev2011.pdf">2010-2013 (revised: 2011)</a></li>
+                <li><a href="./hcea-10-13.pdf">2010-2013</a></li>
+                <li><a href="./hcea-09-10.pdf">2009-2010</a></li>
+                <li><a href="./hcea-07-10.pdf">2007-2010</a></li>
+                <li><a href="./hcea-05-07.pdf">2005-2007</a></li>
+                <li><a href="./hcea-02-05.PDF">2002-2005</a></li>
+                <li><a href="./hcea-00-02.PDF">2000-2002</a></li>
+                <li><a href="./hcea-99-00.PDF">1999-2000</a></li>
+                <li><a href="./hcea-98-99.PDF">1998-1999</a></li>
+                <li><a href="./hcea-97-98.PDF">1997-1998</a></li>
+                <li><a href="./hcea-96-97.PDF">1996-1997</a></li>
+                <li><a href="./hcea-95-96.PDF">1995-1996</a></li>
+                <li><a href="./hcea-94-95.PDF">1994-1995</a></li>
+                <li><a href="./hcea-93-94.PDF">1993-1994</a></li>
+                <li><a href="./hcea-90-93.PDF">1990-1993</a></li>
+                <li><a href="./hcea-87-90.PDF">1987-1990</a></li>
+                <li><a href="./hcea-86-87.PDF">1986-1987</a></li>
+                <li><a href="./hcea-85-86.PDF">1985-1986</a></li>
+                <li><a href="./hcea-84-86.PDF">1984-1986</a></li>
+                <li><a href="./hcea-83-84.PDF">1983-1984</a></li>
+                <li><a href="./hcea-81-83.PDF">1981-1983</a></li>
+                <li><a href="./hcea-79-81.PDF">1979-1981</a></li>
+                <li><a href="./hcea-78-80.PDF">1978-1980</a></li>
+                <li><a href="./hcea-77-78.PDF">1977-1978</a></li>
+                <li><a href="./hcea-76-77.PDF">1976-1977</a></li>
+                <li><a href="./hcea-75-76.PDF">1975-1976</a></li>
+                <li><a href="./hcea-73-75.pdf">1973-1975</a></li>
+                <li><a href="./hcea-72-73.pdf">1972-1973</a></li>
+                <li><a href="./hcea-71-72.pdf">1971-1972</a></li>
+                <li><a href="./hcea-70-71.pdf">1970-1971</a></li>
+                <li><a href="./hcea-69-70.pdf">1969-1970</a></li>
+            </ul>
+            <h2>Starting Salary</h2>
+            <p>All actual salaries are from the appropriate contracts above. The salary selected is the first step of a 10-month teacher with a Standard Professional Certificate. All adjusted salaries are calculated using the <a href="https://www.bls.gov/data/inflation_calculator.htm" target="_blank">CPI Inflation Calculator</a> with June 2025 as the target date.</p>
+            <p>Coming Soon...</p>
+        </div>
     </div>
+
+<!-- JAVASCRIPT
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <script>
+        function rateCalc() {
+            const salary = parseInt(document.getElementById('hrc-salary').value);
+            const days = parseInt(document.getElementById('hrc-type').value);
+            document.getElementById('hrc-rate').value = (salary / (days * 7)).toFixed(2);
+        }
+    </script>
 
 <!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
