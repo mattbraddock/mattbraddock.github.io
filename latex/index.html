@@ -43,9 +43,19 @@
 \usepackage{fancyhdr} % headers/footers
 \usepackage{graphicx} % images
 \usepackage{tabularx} % tables
-\usepackage{tikz} % drawing</code></pre>
+\usepackage{tikz} % drawing
+\usepackage{titling} % moving title</code></pre>
     Page margins:
     <pre><code class="language-latex">\usepackage[top=22mm,bottom=22mm,left=17mm,right=17mm]{geometry}</code></pre>
+    Paragraph spacing:
+    <pre><code class="language-latex">\usepackage{parskip}</code></pre>
+    <h2>Formatting</h2>
+    Move title vertically:
+    <pre><code class="language-latex">\setlength{\droptitle}{-5em}</code></pre>
+    Remove paragraph indenting:
+    <pre><code class="language-latex">\setlength{\parindent}{0pt}</code></pre>
+    Remove page numbers:
+    <pre><code class="language-latex">\pagenumbering{gobble}</code></pre>
     <h2>Commands</h2>
     <label for="sn-1" class="sidenote-toggle">+</label>
     <input type="checkbox" id="sn-1" class="sidenote-toggle" />
