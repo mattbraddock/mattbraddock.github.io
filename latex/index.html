@@ -39,23 +39,51 @@
     <h2>Packages</h2>
     Defaults:
     <pre><code class="language-latex">\usepackage[T1]{fontenc}
-\usepackage{amsmath,mathtools} % math
-\usepackage{fancyhdr} % headers/footers
-\usepackage{graphicx} % images
-\usepackage{tabularx} % tables
-\usepackage{tikz} % drawing
-\usepackage{titling} % moving title</code></pre>
+\usepackage{amsmath,mathtools}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{tikz}</code></pre>
     Page margins:
     <pre><code class="language-latex">\usepackage[top=22mm,bottom=22mm,left=17mm,right=17mm]{geometry}</code></pre>
     Paragraph spacing:
     <pre><code class="language-latex">\usepackage{parskip}</code></pre>
     <h2>Formatting</h2>
     Move title vertically:
-    <pre><code class="language-latex">\setlength{\droptitle}{-5em}</code></pre>
+    <pre><code class="language-latex">\usepackage{titling}
+\setlength{\droptitle}{-5em}</code></pre>
     Remove paragraph indenting:
     <pre><code class="language-latex">\setlength{\parindent}{0pt}</code></pre>
     Remove page numbers:
     <pre><code class="language-latex">\pagenumbering{gobble}</code></pre>
+    Temporary indentation:
+    <pre><code class="language-latex">\usepackage{changepage}
+\begin{adjustwidth}{10mm}{}
+...
+\end{adjustwidth}</code></pre>
+    Headers and footers:
+    <pre><code class="language-latex">\usepackage{fancyhdr}
+\pagestyle{fancy}
+\setlength{\headheight}{14pt}
+\fancyhead[L]{}
+\fancyhead[C]{}
+\fancyhead[R]{}
+\fancyfoot[L]{}
+\fancyfoot[C]{}
+\fancyfoot[R]{}
+% change rule width as needed
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}</code></pre>
+    Different headers and footers on first page:
+    <pre><code class="language-latex">\fancypagestyle{firstpage}{
+    \fancyhead[L]{}
+    \fancyhead[C]{}
+    \fancyhead[R]{}
+    \fancyfoot[L]{}
+    \fancyfoot[C]{}
+    \fancyfoot[R]{}
+}
+% add the following just after \begin{document}
+\thispagestyle{firstpage}</code></pre>
     <h2>Commands</h2>
     <label for="sn-1" class="sidenote-toggle">+</label>
     <input type="checkbox" id="sn-1" class="sidenote-toggle" />
@@ -73,6 +101,56 @@
     <pre><code class="language-latex">\newcommand{\blankline}[1]{
 	\parbox{#1em}{\vtop{\vskip1em \hrulefill}}
 }</code></pre>
+    <label for="sn-3" class="sidenote-toggle">+</label>
+    <input type="checkbox" id="sn-3" class="sidenote-toggle" />
+    <span class="sidenote">Usage: <code>\insertimage{0.5}{image.png}</code> will add image.png with width equal to 50% the text width</span>
+    Insert image:
+    <pre><code class="language-latex">\newcommand{\insertimage}[2]{
+	\includegraphics[width=#1\textwidth,keepaspectratio=true]{#2}
+}</code></pre>
+    <h2>Templates</h2>
+    Basic document:
+    <pre><code class="language-latex">\documentclass[11pt,letterpaper]{article}
+
+% Packages
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,mathtools}
+\usepackage[top=25mm,bottom=22mm,left=17mm,right=17mm]{geometry}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{tikz}
+
+\begin{document}
+
+\end{document}</code></pre>
+    Presentations:
+    <pre><code class="language-latex">\documentclass[aspectratio=1610]{beamer}
+\mode<presentation>
+
+% Packages
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,mathtools}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{tikz}
+
+% Theming
+\usetheme{Pittsburgh}
+\usecolortheme{spruce}
+\usefonttheme{serif}
+
+% Titling
+\title{Title}
+%\title{Title\\\vspace{0.5em}\small{\textsc{Subtitle}}}
+\author{Author}
+\date{}
+
+\begin{document}
+    \begin{frame}
+        \titlepage
+    \end{frame}
+
+\end{document}</code></pre>
   </article></main>
 </body>
 </html>
